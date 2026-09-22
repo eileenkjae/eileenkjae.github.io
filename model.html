@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Low-poly 3D model portfolio."
+    >
+
+    <title>3D Model — Eileen Portfolio</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- ==================================================
+         MODEL VIEWER
+
+         Componente ufficiale <model-viewer>.
+    =================================================== -->
+
+    <script
+        type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header class="site-header">
+
+        <a
+            class="site-logo"
+            href="index.html"
+        >
+            EILEEN
+            <span>/ PORTFOLIO</span>
+        </a>
+
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+
+            <a href="index.html#projects">
+                Projects
+            </a>
+
+            <a href="index.html#three-d">
+                3D
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MODEL CONTENT
+
+         JavaScript costruirà qui la pagina.
+    =================================================== -->
+
+    <main id="model-page">
+
+        <div class="model-loading">
+
+            <span class="model-loading-mark">
+                ×
+            </span>
+
+            Loading 3D model...
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="site-footer">
+
+        <span>
+            EILEEN / 3D WORK
+        </span>
+
+        <span>
+            Built by hand.
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         DATA + MODEL SCRIPT
+    =================================================== -->
+
+    <script src="js/data/models.js"></script>
+
+    <script src="js/model.js"></script>
+
+</body>
+
+</html>

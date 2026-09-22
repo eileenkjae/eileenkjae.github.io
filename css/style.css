@@ -2419,3 +2419,822 @@ a:focus-visible {
     }
 
 }
+/* =========================================================
+   3D MODEL DETAIL PAGE
+========================================================= */
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.model-loading {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding:
+        var(--page-padding);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+}
+
+
+.model-loading-mark {
+    color:
+        var(--marker);
+
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   MODEL HERO
+========================================================= */
+
+.model-hero {
+    padding:
+        32px
+        var(--page-padding)
+        clamp(70px, 10vw, 150px);
+
+    border-bottom:
+        var(--border);
+}
+
+
+.model-back-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom:
+        clamp(65px, 10vw, 150px);
+}
+
+
+.model-stamp {
+    display: inline-block;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        2px
+        solid
+        var(--marker);
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.model-title-area {
+    position: relative;
+
+    max-width: 1500px;
+
+    margin-bottom:
+        clamp(50px, 7vw, 100px);
+}
+
+
+.model-title-area h1 {
+    max-width: 1400px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            70px,
+            12vw,
+            190px
+        );
+
+    font-weight: 900;
+
+    line-height: 0.78;
+
+    letter-spacing:
+        -0.075em;
+
+    text-transform:
+        uppercase;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.model-title-mark {
+    position: absolute;
+
+    right: 3%;
+    top: -15%;
+
+    z-index: -1;
+
+    color:
+        var(--marker);
+
+    font-size:
+        clamp(
+            130px,
+            20vw,
+            310px
+        );
+
+    font-weight: 100;
+
+    line-height: 1;
+
+    transform:
+        rotate(10deg);
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VIEWER FRAME
+========================================================= */
+
+.model-viewer-frame {
+    position: relative;
+
+    margin-top:
+        clamp(
+            40px,
+            6vw,
+            90px
+        );
+
+    border:
+        var(--border);
+
+    background:
+        #d7d1c6;
+}
+
+
+.model-viewer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        10px
+        14px;
+
+    border-bottom:
+        var(--border);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+}
+
+
+.model-viewer-top span:last-child {
+    color:
+        var(--marker);
+}
+
+
+.model-viewer-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height:
+        min(
+            72vh,
+            780px
+        );
+
+    min-height: 480px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #eee9df 0%,
+            #d7d1c6 70%,
+            #c8c1b5 100%
+        );
+}
+
+
+/* =========================================================
+   ACTUAL <model-viewer>
+========================================================= */
+
+.portfolio-model-viewer {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        transparent;
+
+    --poster-color:
+        transparent;
+}
+
+
+/* =========================================================
+   NO GLB PLACEHOLDER
+========================================================= */
+
+.model-viewer-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 12px,
+            rgba(0, 0, 0, 0.025) 12px,
+            rgba(0, 0, 0, 0.025) 24px
+        );
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   VIEWER PUNK MARKS
+========================================================= */
+
+.viewer-corner {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        var(--paper);
+
+    border:
+        1.5px
+        solid
+        var(--ink);
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 22px;
+
+    pointer-events: none;
+}
+
+
+.viewer-corner-one {
+    left: -13px;
+    bottom: 35px;
+
+    transform:
+        rotate(-7deg);
+}
+
+
+.viewer-corner-two {
+    right: -13px;
+    top: 70px;
+
+    transform:
+        rotate(8deg);
+}
+
+
+/* =========================================================
+   MODEL INFO
+========================================================= */
+
+.model-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    margin-top:
+        60px;
+
+    border-top:
+        var(--border);
+
+    border-left:
+        var(--border);
+}
+
+
+.model-info-item {
+    min-height: 120px;
+
+    padding:
+        16px;
+
+    border-right:
+        var(--border);
+
+    border-bottom:
+        var(--border);
+}
+
+
+.model-info-label {
+    display: block;
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--soft-ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+}
+
+
+.model-info-item p {
+    margin: 0;
+
+    font-size:
+        clamp(
+            16px,
+            1.5vw,
+            21px
+        );
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   TEST CREDIT
+========================================================= */
+
+.model-credit {
+    display: flex;
+    align-items: flex-start;
+
+    gap:
+        clamp(
+            20px,
+            4vw,
+            65px
+        );
+
+    margin-top: 30px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px
+        solid
+        var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.model-credit > span {
+    flex-shrink: 0;
+
+    color:
+        var(--marker);
+
+    font-weight: 700;
+}
+
+
+.model-credit p {
+    margin: 0;
+}
+
+
+.model-credit a {
+    color:
+        inherit;
+
+    text-decoration: none;
+}
+
+
+.model-credit a:hover {
+    text-decoration: underline;
+
+    text-decoration-color:
+        var(--marker);
+
+    text-decoration-thickness: 2px;
+}
+
+
+/* =========================================================
+   MODEL SECTIONS
+========================================================= */
+
+.model-section {
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr);
+
+    padding:
+        clamp(70px, 10vw, 150px)
+        var(--page-padding);
+
+    border-bottom:
+        var(--border);
+}
+
+
+.model-section-number {
+    padding-top: 10px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.model-section-content {
+    max-width:
+        1250px;
+}
+
+
+.model-section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 45px;
+
+    margin-bottom:
+        clamp(
+            45px,
+            7vw,
+            90px
+        );
+}
+
+
+.model-section-header h2 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            50px,
+            8vw,
+            120px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing:
+        -0.065em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   MODEL DESCRIPTION
+========================================================= */
+
+.model-description {
+    max-width: 850px;
+}
+
+
+.model-description p {
+    margin:
+        0
+        0
+        1.3em;
+
+    font-size:
+        clamp(
+            21px,
+            2.4vw,
+            34px
+        );
+
+    line-height: 1.22;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+/* =========================================================
+   MODEL BREAKDOWN
+========================================================= */
+
+.model-breakdown-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        clamp(
+            25px,
+            4vw,
+            60px
+        );
+}
+
+
+.model-breakdown-item {
+    margin: 0;
+}
+
+
+.model-breakdown-item:nth-child(3n) {
+    grid-column:
+        1 / -1;
+}
+
+
+.model-breakdown-media {
+    width: 100%;
+
+    border:
+        var(--border);
+
+    background:
+        #d7d1c6;
+
+    overflow: hidden;
+}
+
+
+.model-breakdown-media img {
+    width: 100%;
+
+    aspect-ratio:
+        4 / 3;
+
+    object-fit: cover;
+
+    transition:
+        transform
+        150ms
+        ease;
+}
+
+
+.model-breakdown-item:hover
+.model-breakdown-media img {
+    transform:
+        scale(1.015);
+}
+
+
+.model-breakdown-item figcaption {
+    display: flex;
+
+    margin-top: 10px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+}
+
+
+.model-breakdown-item figcaption span {
+    display: inline-block;
+
+    padding:
+        4px
+        7px;
+
+    border:
+        1px
+        solid
+        var(--ink);
+}
+
+
+.model-breakdown-item:nth-child(even)
+figcaption span {
+    transform:
+        rotate(1deg);
+}
+
+
+/* =========================================================
+   MODEL — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .model-info-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .model-section {
+        grid-template-columns:
+            65px
+            minmax(0, 1fr);
+    }
+
+
+    .model-viewer-wrapper {
+        min-height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   MODEL — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .model-back-row {
+        margin-bottom: 80px;
+    }
+
+
+    .model-title-area h1 {
+        font-size:
+            clamp(
+                58px,
+                20vw,
+                105px
+            );
+    }
+
+
+    .model-title-mark {
+        right: -10%;
+    }
+
+
+    .model-viewer-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .model-viewer-wrapper {
+        height: 60vh;
+
+        min-height: 390px;
+    }
+
+
+    .model-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .model-credit {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .model-section {
+        grid-template-columns:
+            1fr;
+
+        gap: 25px;
+    }
+
+
+    .model-section-number {
+        padding: 0;
+    }
+
+
+    .model-section-header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .model-section-header h2 {
+        font-size:
+            clamp(
+                46px,
+                16vw,
+                82px
+            );
+    }
+
+
+    .model-breakdown-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .model-breakdown-item:nth-child(3n) {
+        grid-column: auto;
+    }
+
+}
