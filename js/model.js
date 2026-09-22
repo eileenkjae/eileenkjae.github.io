@@ -792,3 +792,46 @@ function buildModelPage() {
 
 
 buildModelPage();
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+function updateModelMotionPreference() {
+
+    const viewer =
+        document.querySelector(
+            ".portfolio-model-viewer"
+        );
+
+
+    if (!viewer) {
+        return;
+    }
+
+
+    if (
+        prefersReducedMotion.matches
+    ) {
+
+        viewer.removeAttribute(
+            "auto-rotate"
+        );
+
+    }
+
+}
+
+
+updateModelMotionPreference();
+
+
+prefersReducedMotion.addEventListener(
+    "change",
+    updateModelMotionPreference
+);

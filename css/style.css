@@ -3259,3 +3259,971 @@ figcaption span {
 
     line-height: 1.4;
 }
+/* =========================================================
+   PHASE 7 — FINAL TEMPLATE POLISH
+   DIY / PUNK EDITORIAL DIRECTION
+========================================================= */
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: var(--marker);
+    color: var(--paper);
+}
+
+
+/* =========================================================
+   SUBTLE PHOTOCOPY / PAPER SURFACE
+
+   È volutamente molto leggero.
+   Non deve interferire con immagini o leggibilità.
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    opacity: 0.11;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 0, 0, 0.09) 0,
+            rgba(0, 0, 0, 0.09) 0.5px,
+            transparent 0.8px
+        ),
+        radial-gradient(
+            circle at 80% 65%,
+            rgba(0, 0, 0, 0.07) 0,
+            rgba(0, 0, 0, 0.07) 0.5px,
+            transparent 0.9px
+        );
+
+    background-size:
+        7px 7px,
+        11px 11px;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   SLIGHT PRINT MISREGISTRATION
+
+   Solo titoli grandi.
+========================================================= */
+
+.hero-title,
+.section h2,
+.project-title-area h1,
+.model-title-area h1,
+.project-error h1 {
+    text-shadow:
+        1px 0
+        rgba(239, 77, 54, 0.16);
+}
+
+
+/* =========================================================
+   HEADER — LESS CLEAN / MORE EDITORIAL
+========================================================= */
+
+.site-header {
+    position: relative;
+}
+
+.site-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: var(--page-padding);
+    bottom: -4px;
+
+    width: 74px;
+    height: 6px;
+
+    background: var(--marker);
+
+    transform: rotate(-1.5deg);
+
+    pointer-events: none;
+}
+
+
+.site-logo {
+    position: relative;
+}
+
+
+.site-logo::before {
+    content: "×";
+
+    position: absolute;
+
+    left: -19px;
+    top: -7px;
+
+    color: var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    transform: rotate(-9deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav a {
+    min-height: 28px;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   HERO — DIY DETAILS
+========================================================= */
+
+.hero {
+    isolation: isolate;
+}
+
+
+.hero::after {
+    content: "PLAY / TEST / REPEAT";
+
+    position: absolute;
+
+    right: var(--page-padding);
+    top: 105px;
+
+    z-index: -1;
+
+    padding:
+        6px
+        9px;
+
+    border:
+        1.5px solid
+        var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    transform:
+        rotate(-3deg);
+
+    opacity: 0.72;
+}
+
+
+.hero-title {
+    position: relative;
+}
+
+
+/*
+Piccola imperfezione da stampa,
+non una grande animazione.
+*/
+
+.hero-title::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1.5%;
+    top: 46%;
+
+    width: 16px;
+    height: 16px;
+
+    border:
+        2px solid
+        var(--marker);
+
+    transform:
+        rotate(15deg);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+========================================================= */
+
+.section-header {
+    position: relative;
+}
+
+
+.section-header::after {
+    content: "//";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    color: var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            42px
+        );
+
+    font-weight: 700;
+
+    transform:
+        rotate(7deg);
+}
+
+
+.section-number {
+    position: relative;
+
+    width: fit-content;
+}
+
+
+.section-number::after {
+    content: "";
+
+    position: absolute;
+
+    left: -5px;
+    right: -8px;
+    bottom: -4px;
+
+    height: 3px;
+
+    background:
+        var(--marker);
+
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =========================================================
+   WORK CARDS
+
+   Le immagini rimangono pulite.
+   L'imperfezione interessa solo il contenitore.
+========================================================= */
+
+.work-card:nth-child(4n + 1) {
+    transform:
+        rotate(-0.12deg);
+}
+
+
+.work-card:nth-child(4n + 2) {
+    transform:
+        rotate(0.16deg);
+}
+
+
+.work-card:nth-child(4n + 3) {
+    transform:
+        rotate(-0.08deg);
+}
+
+
+.work-card-media::after {
+    content: "";
+
+    position: absolute;
+
+    right: -2px;
+    bottom: -2px;
+
+    width: 30px;
+    height: 10px;
+
+    border-bottom:
+        3px solid
+        var(--marker);
+
+    transform:
+        rotate(-4deg);
+
+    pointer-events: none;
+}
+
+
+.work-card-title {
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.empty-state {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-big {
+    text-wrap: balance;
+}
+
+
+.about-section::after {
+    content: "///";
+
+    position: absolute;
+
+    right: 7%;
+    bottom: 35px;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 35px;
+
+    transform:
+        rotate(-8deg);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    overflow: hidden;
+}
+
+
+.contact-main {
+    position: relative;
+}
+
+
+.contact-main::after {
+    content: "GET IN TOUCH";
+
+    position: absolute;
+
+    right: 2%;
+    top: 10%;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+    font-weight: 700;
+
+    letter-spacing:
+        0.1em;
+
+    transform:
+        rotate(7deg);
+}
+
+
+/* =========================================================
+   PROJECT PAGE — EXTRA DIY DETAILS
+========================================================= */
+
+.project-stamp,
+.model-stamp {
+    box-shadow:
+        2px 2px 0
+        rgba(17, 17, 17, 0.12);
+}
+
+
+.project-section-header,
+.model-section-header {
+    position: relative;
+}
+
+
+.project-section-header::after,
+.model-section-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -18px;
+
+    width: min(
+        95px,
+        25%
+    );
+
+    height: 4px;
+
+    background:
+        var(--marker);
+
+    transform:
+        rotate(-1deg);
+}
+
+
+/* =========================================================
+   BEFORE / AFTER
+
+   Mantiene due immagini equivalenti.
+========================================================= */
+
+.comparison-side {
+    position: relative;
+}
+
+
+.comparison-side:first-child::after {
+    content: "01";
+
+    position: absolute;
+
+    right: 10px;
+    top: -28px;
+
+    color:
+        var(--soft-ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+.comparison-side:last-child::after {
+    content: "02";
+
+    position: absolute;
+
+    right: 10px;
+    top: -28px;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MODEL VIEWER — LITTLE MORE INDUSTRIAL / DIY
+========================================================= */
+
+.model-viewer-frame {
+    box-shadow:
+        7px 7px 0
+        rgba(17, 17, 17, 0.07);
+}
+
+
+.model-viewer-top {
+    position: relative;
+}
+
+
+.model-viewer-top::after {
+    content: "///";
+
+    margin-left: 14px;
+
+    color:
+        var(--marker);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    position: relative;
+}
+
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 36px;
+    height: 3px;
+
+    background:
+        var(--marker);
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+}
+
+
+/* =========================================================
+   BETTER RESPONSIVE BEHAVIOUR — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero::after {
+        top: 90px;
+    }
+
+
+    .section-header::after {
+        top: -15px;
+    }
+
+
+    .work-card:nth-child(n) {
+        transform: none;
+    }
+
+
+    .project-title-area h1,
+    .model-title-area h1 {
+        overflow-wrap: normal;
+
+        word-break: normal;
+    }
+
+}
+
+
+/* =========================================================
+   BETTER RESPONSIVE BEHAVIOUR — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    :root {
+        --page-padding: 18px;
+    }
+
+
+    /* -----------------------------------------
+       HEADER
+    ----------------------------------------- */
+
+    .site-header {
+        padding-top: 17px;
+        padding-bottom: 14px;
+    }
+
+
+    .site-logo::before {
+        display: none;
+    }
+
+
+    .main-nav {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                4,
+                auto
+            );
+
+        justify-content:
+            space-between;
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+
+    .main-nav a {
+        min-height: 34px;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        min-height:
+            calc(
+                100svh - 110px
+            );
+
+        padding-top: 24px;
+    }
+
+
+    .hero::after {
+        right: 18px;
+        top: 75px;
+
+        font-size: 8px;
+    }
+
+
+    .hero-title {
+        margin-top: 115px;
+
+        font-size:
+            clamp(
+                64px,
+                24vw,
+                105px
+            );
+
+        line-height: 0.76;
+    }
+
+
+    .hero-title::before {
+        width: 10px;
+        height: 10px;
+    }
+
+
+    .hero-title::after {
+        height: 6px;
+
+        margin-top: 24px;
+    }
+
+
+    .hero-description {
+        font-size:
+            clamp(
+                20px,
+                6vw,
+                27px
+            );
+    }
+
+
+    .hero-tags {
+        gap: 6px;
+    }
+
+
+    .hero-tags span {
+        font-size: 9px;
+    }
+
+
+    /* -----------------------------------------
+       GENERAL SECTIONS
+    ----------------------------------------- */
+
+    .section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+
+    .section-header::after {
+        display: none;
+    }
+
+
+    .section-description {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------
+       CARDS
+    ----------------------------------------- */
+
+    .work-grid {
+        gap: 48px;
+    }
+
+
+    .work-card-media {
+        aspect-ratio:
+            16 / 10;
+    }
+
+
+    .work-card-info {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+    }
+
+
+    .work-card-title {
+        font-size:
+            clamp(
+                25px,
+                8vw,
+                36px
+            );
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about-big {
+        font-size:
+            clamp(
+                37px,
+                11vw,
+                58px
+            );
+
+        line-height: 0.98;
+    }
+
+
+    .about-section::after {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       PROJECT / MODEL HERO
+    ----------------------------------------- */
+
+    .project-hero,
+    .model-hero {
+        padding-left:
+            var(--page-padding);
+
+        padding-right:
+            var(--page-padding);
+    }
+
+
+    .project-title-area h1,
+    .model-title-area h1 {
+        word-break: normal;
+
+        overflow-wrap:
+            break-word;
+    }
+
+
+    /* -----------------------------------------
+       BEFORE VS AFTER
+    ----------------------------------------- */
+
+    .comparison-grid {
+        gap: 65px;
+    }
+
+
+    /* -----------------------------------------
+       VIEWER
+    ----------------------------------------- */
+
+    .model-viewer-frame {
+        box-shadow:
+            4px 4px 0
+            rgba(
+                17,
+                17,
+                17,
+                0.07
+            );
+    }
+
+
+    .viewer-corner {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
+
+    .contact-main::after {
+        display: none;
+    }
+
+
+    .contact-links {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .rough-button {
+        min-height: 44px;
+
+        display:
+            inline-flex;
+
+        align-items: center;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .main-nav {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .main-nav a {
+        justify-content:
+            flex-start;
+    }
+
+
+    .hero-title {
+        font-size:
+            clamp(
+                58px,
+                23vw,
+                90px
+            );
+    }
+
+
+    .hero::after {
+        display: none;
+    }
+
+
+    .project-meta,
+    .model-info-grid {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+
+   Se l'utente ha chiesto meno animazioni,
+   togliamo movimenti puramente decorativi.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.001ms !important;
+
+        animation-duration:
+            0.001ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+
+    .work-card:hover
+    .work-card-media,
+
+    .work-card:focus-visible
+    .work-card-media {
+
+        transform: none;
+    }
+
+
+    .project-big-link:hover span {
+        transform: none;
+    }
+
+}
