@@ -2409,8 +2409,8 @@ a:focus-visible {
     }
 
     .gallery-item:nth-child(3n) {
-        grid-column: auto;
-    }
+    grid-column: auto;
+}
 
     .project-end {
         align-items: flex-start;
@@ -4224,6 +4224,93 @@ non una grande animazione.
 
     .project-big-link:hover span {
         transform: none;
+    }
+
+}
+/* =========================================================
+   FORCE UNIFORM PROJECT GALLERY
+========================================================= */
+
+.project-gallery .gallery-item {
+    grid-column: auto;
+}
+
+.project-gallery .gallery-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+/* =========================================================
+   PROJECT COVERS — 256 × 256
+========================================================= */
+
+.projects-section .work-grid {
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            256px
+        );
+
+    gap:
+        55px
+        32px;
+
+    justify-content: start;
+}
+
+
+.projects-section .work-card {
+    width: 256px;
+    margin-top: 0;
+}
+
+
+.projects-section .work-card-media {
+    width: 256px;
+    height: 256px;
+
+    aspect-ratio: 1 / 1;
+}
+
+
+.projects-section .work-card-media img {
+    width: 256px;
+    height: 256px;
+
+    object-fit: cover;
+}
+@media (max-width: 650px) {
+
+    .projects-section .work-grid {
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(
+                    min(100%, 256px),
+                    256px
+                )
+            );
+    }
+
+
+    .projects-section .work-card {
+        width: min(
+            256px,
+            100%
+        );
+    }
+
+
+    .projects-section .work-card-media,
+    .projects-section .work-card-media img {
+        width: min(
+            256px,
+            100%
+        );
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
     }
 
 }

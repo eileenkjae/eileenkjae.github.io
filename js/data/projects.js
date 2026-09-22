@@ -3,10 +3,11 @@
 PROJECT DATA
 =========================================================
 
-PROGETTO TEMPORANEO DI TEST.
+Qui vengono definiti tutti i progetti reali
+mostrati nel portfolio.
 
-Serve solamente per testare
-il template del portfolio.
+I testi narrativi di COQUETTE sono volutamente
+ancora vuoti: verranno scritti dall'autrice.
 */
 
 
@@ -14,126 +15,121 @@ const PROJECTS = [
 
     {
 
-        id: "test-project",
+        /* =============================================
+           BASIC INFORMATION
+        ============================================= */
 
-        title: "Project Test",
+        id: "coquette",
 
-        type: "Gameplay Prototype",
+        title: "COQUETTE",
 
-        subtitle:
-            "Temporary project used only to test the portfolio layout.",
+        type: "Game Design / Gameplay Prototype",
+
+        subtitle: "",
 
 
-        hero: null,
+        /* =============================================
+           HOMEPAGE COVER
 
+           La homepage vuole un'immagine statica.
+        ============================================= */
+
+        cover:
+            "assets/projects/coquette/copertina.png",
+
+
+        /* =============================================
+           HERO
+
+           Video principale della pagina progetto.
+        ============================================= */
+
+        hero: {
+
+            type: "video",
+
+            src:
+                "assets/projects/coquette/hero.mp4",
+
+            autoplay: true,
+
+            loop: true,
+
+            muted: true,
+
+            controls: false
+
+        },
+
+
+        /* =============================================
+           PROJECT INFO
+        ============================================= */
 
         role: [
             "Game Design",
+            "Gameplay Design",
             "Unity Implementation"
         ],
 
         engine: "Unity",
 
-        year: "TEST",
+        year: "",
 
-        duration: "TEST",
+        duration: "",
 
-        team: "TEST",
+        team: "Solo Project",
 
         status: "Prototype",
 
 
-        focus: [
-            "Gameplay",
-            "Prototyping",
-            "3D"
-        ],
+        /*
+        Le aree principali verranno definite
+        meglio quando completeremo i testi.
+        */
+
+        focus: [],
 
 
         /* =============================================
            OVERVIEW
+
+           Verrà scritto da te.
         ============================================= */
 
-        overview:
-            `This is a temporary project.
-
-This section briefly explains what the project is.`,
+        overview: "",
 
 
         /* =============================================
            VISION
 
-           PROCESS è DENTRO Vision.
+           Verrà scritto da te.
+
+           process sarà una breve sottosezione
+           "From Idea to Playable".
         ============================================= */
 
         vision: {
 
-            text:
-                `This section explains the idea behind the project and the experience I wanted to create.
+            text: "",
 
-It is about the intention and direction of the project, not a list of problems that were solved.`,
-
-
-            process: [
-
-                {
-
-                    title:
-                        "Idea",
-
-                    text:
-                        `Define the central gameplay idea and decide what the prototype needs to communicate.`
-
-                },
-
-                {
-
-                    title:
-                        "Prototype",
-
-                    text:
-                        `Translate the idea into a playable Unity scene using only the systems required for the concept.`
-
-                },
-
-                {
-
-                    title:
-                        "Refine",
-
-                    text:
-                        `Develop the presentation, gameplay and assets until the prototype represents the intended experience.`
-
-                }
-
-            ]
+            process: []
 
         },
 
 
         /* =============================================
            CORE LOOP
+
+           Decideremo se tenerlo dopo aver visto
+           la pagina completa.
         ============================================= */
 
-        coreLoop: [
-
-            "Action",
-
-            "Feedback",
-
-            "Decision",
-
-            "Repeat"
-
-        ],
+        coreLoop: [],
 
 
         /* =============================================
            BEFORE VS AFTER
-
-           Qui metteremo foto, GIF o video veri.
-
-           Tu deciderai sempre le descrizioni.
         ============================================= */
 
         beforeAfter: {
@@ -141,12 +137,21 @@ It is about the intention and direction of the project, not a list of problems t
             before: {
 
                 label:
-                    "Before",
+                    "Early Development",
 
-                media: null,
+                media: {
 
-                description:
-                    `Temporary description of the earlier version.`
+                    type: "image",
+
+                    src:
+                        "assets/projects/coquette/early.png",
+
+                    alt:
+                        "Early development photo of COQUETTE running in Unity."
+
+                },
+
+                description: ""
 
             },
 
@@ -154,12 +159,21 @@ It is about the intention and direction of the project, not a list of problems t
             after: {
 
                 label:
-                    "After",
+                    "Final Prototype",
 
-                media: null,
+                media: {
 
-                description:
-                    `Temporary description of the later version.`
+                    type: "image",
+
+                    src:
+                        "assets/projects/coquette/level-view.png",
+
+                    alt:
+                        "COQUETTE final prototype environment."
+
+                },
+
+                description: ""
 
             }
 
@@ -176,18 +190,103 @@ It is about the intention and direction of the project, not a list of problems t
 
             "Gameplay Design",
 
-            "Unity Prototyping",
+            "Unity Implementation",
 
-            "3D / Scene Work"
+            "Level / Scene Design",
+
+            "UI Design",
+
+            "Low-poly 3D"
 
         ],
 
 
         /* =============================================
            GALLERY
+
+           Per ora soltanto materiale già pronto.
+
+           Il menu verrà aggiunto dopo aver convertito
+           la GIF in un formato più leggero.
         ============================================= */
 
-        gallery: [],
+        gallery: [
+
+             {
+
+        type: "image",
+
+        src:
+            "assets/projects/coquette/menu.png",
+
+        alt:
+            "COQUETTE main menu and UI design.",
+
+        caption:
+            "Main Menu / UI"
+
+    },
+
+    {
+
+        type: "video",
+
+        src:
+            "assets/projects/coquette/weapon-wheel.mp4",
+
+        autoplay: true,
+
+        loop: true,
+
+        muted: true,
+
+        controls: false,
+
+        caption:
+            "Weapon Wheel"
+
+    },
+
+
+    {
+
+        type: "video",
+
+        src:
+            "assets/projects/coquette/knife.mp4",
+
+        autoplay: true,
+
+        loop: true,
+
+        muted: true,
+
+        controls: false,
+
+        caption:
+            "Knife"
+
+    },
+
+
+
+
+    {
+
+        type: "image",
+
+        src:
+            "assets/projects/coquette/final-encounter.png",
+
+        alt:
+            "Final encounter in COQUETTE.",
+
+        caption:
+            "Final Encounter"
+
+    }
+
+],
 
 
         /* =============================================
@@ -199,10 +298,10 @@ It is about the intention and direction of the project, not a list of problems t
             {
 
                 label:
-                    "Example Link",
+                    "Play COQUETTE on itch.io",
 
                 url:
-                    "https://example.com"
+                    "https://kissaleen.itch.io/coquette-first-person-smoker"
 
             }
 
