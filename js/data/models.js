@@ -45,8 +45,8 @@ const MODELS = [
         -------------------------------------------------
         */
 
-        file:
-            "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
+       file:
+    "assets/models/viewer-test/model.glb",
 
 
         alt:
