@@ -974,3 +974,1448 @@ a:focus-visible {
     }
 
 }
+
+/* =========================================================
+   PROJECT DETAIL PAGE
+========================================================= */
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.project-loading {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: var(--page-padding);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+}
+
+.project-loading-mark {
+    color: var(--marker);
+
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   PROJECT HERO
+========================================================= */
+
+.project-hero {
+    padding:
+        32px
+        var(--page-padding)
+        clamp(70px, 10vw, 150px);
+
+    border-bottom:
+        var(--border);
+}
+
+.project-back-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom:
+        clamp(65px, 10vw, 150px);
+}
+
+.project-back {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.project-back:hover {
+    text-decoration: underline;
+
+    text-decoration-thickness: 2px;
+
+    text-decoration-color:
+        var(--marker);
+}
+
+.project-stamp {
+    display: inline-block;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        2px
+        solid
+        var(--marker);
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transform:
+        rotate(2deg);
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.project-title-area {
+    position: relative;
+
+    max-width: 1500px;
+
+    margin-bottom:
+        clamp(50px, 7vw, 100px);
+}
+
+.project-kicker {
+    width: fit-content;
+
+    margin:
+        0
+        0
+        18px;
+
+    padding:
+        5px
+        8px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--paper);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    text-transform:
+        uppercase;
+
+    transform:
+        rotate(-0.7deg);
+}
+
+.project-title-area h1 {
+    max-width: 1350px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            72px,
+            13vw,
+            210px
+        );
+
+    font-weight: 900;
+
+    line-height: 0.77;
+
+    letter-spacing:
+        -0.075em;
+
+    text-transform:
+        uppercase;
+
+    overflow-wrap:
+        anywhere;
+}
+
+.project-subtitle {
+    max-width: 700px;
+
+    margin:
+        42px
+        0
+        0;
+
+    font-size:
+        clamp(
+            20px,
+            2.2vw,
+            31px
+        );
+
+    line-height: 1.15;
+
+    letter-spacing:
+        -0.025em;
+}
+
+.project-title-mark {
+    position: absolute;
+
+    right: 2%;
+    top: 8%;
+
+    z-index: -1;
+
+    color:
+        var(--marker);
+
+    font-size:
+        clamp(
+            130px,
+            22vw,
+            330px
+        );
+
+    font-weight: 100;
+
+    line-height: 0.6;
+
+    transform:
+        rotate(12deg);
+
+    opacity: 0.85;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJECT HERO MEDIA
+========================================================= */
+
+.project-hero-visual {
+    position: relative;
+
+    margin-bottom:
+        40px;
+}
+
+.project-hero-media {
+    width: 100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    object-fit: cover;
+
+    border:
+        var(--border);
+
+    background:
+        #d8d2c6;
+}
+
+.project-media-label {
+    position: absolute;
+
+    left: 18px;
+    bottom: -14px;
+
+    padding:
+        6px
+        10px;
+
+    background:
+        var(--paper);
+
+    border:
+        1.5px
+        solid
+        var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    transform:
+        rotate(-1deg);
+}
+
+.project-media-placeholder {
+    display: grid;
+
+    place-items: center;
+
+    min-height: 260px;
+
+    padding: 40px;
+
+    border:
+        var(--border);
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 0, 0, 0.025) 10px,
+            rgba(0, 0, 0, 0.025) 20px
+        ),
+        #d8d2c6;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   PROJECT META
+========================================================= */
+
+.project-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    margin-top:
+        65px;
+
+    border-top:
+        var(--border);
+
+    border-left:
+        var(--border);
+}
+
+.project-meta-item {
+    min-height: 125px;
+
+    padding: 16px;
+
+    border-right:
+        var(--border);
+
+    border-bottom:
+        var(--border);
+}
+
+.project-meta-label {
+    display: block;
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--soft-ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+}
+
+.project-meta-item p {
+    margin: 0;
+
+    font-size:
+        clamp(
+            16px,
+            1.5vw,
+            21px
+        );
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.project-focus {
+    display: flex;
+    align-items: flex-start;
+
+    gap:
+        clamp(
+            25px,
+            5vw,
+            80px
+        );
+
+    margin-top:
+        40px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px
+        solid
+        var(--ink);
+}
+
+.project-focus-title {
+    flex-shrink: 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.project-simple-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap:
+        8px
+        20px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 16px;
+}
+
+.project-simple-list li::before {
+    content: "×";
+
+    margin-right: 7px;
+
+    color:
+        var(--marker);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
+
+.project-section {
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr);
+
+    padding:
+        clamp(70px, 10vw, 150px)
+        var(--page-padding);
+
+    border-bottom:
+        var(--border);
+}
+
+.project-section-side {
+    padding-top: 10px;
+}
+
+.project-section-number {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-section-content {
+    max-width:
+        1250px;
+}
+
+.project-section-header {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom:
+        clamp(45px, 7vw, 90px);
+}
+
+.project-section-header h2 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            48px,
+            8vw,
+            120px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing:
+        -0.065em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   PUNK NOTES
+========================================================= */
+
+.punk-note {
+    display: inline-block;
+
+    max-width: 190px;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    transform:
+        rotate(3deg);
+}
+
+
+/* =========================================================
+   PROJECT TEXT
+========================================================= */
+
+.project-text {
+    max-width: 850px;
+}
+
+.project-text p {
+    margin:
+        0
+        0
+        1.3em;
+
+    font-size:
+        clamp(
+            21px,
+            2.4vw,
+            34px
+        );
+
+    line-height: 1.22;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+/* =========================================================
+   CORE LOOP
+========================================================= */
+
+.core-loop {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap:
+        14px;
+
+    padding:
+        clamp(25px, 4vw, 55px);
+
+    border:
+        var(--border);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+}
+
+.loop-step {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.loop-step > span:first-child {
+    padding:
+        10px
+        13px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--paper);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        12px;
+
+    text-transform:
+        uppercase;
+}
+
+.loop-arrow {
+    color:
+        var(--marker);
+
+    font-size:
+        28px;
+}
+
+
+/* =========================================================
+   VISION / PROCESS
+========================================================= */
+
+.vision-text {
+    margin-bottom:
+        clamp(
+            55px,
+            8vw,
+            110px
+        );
+}
+
+
+.vision-process {
+    position: relative;
+
+    padding-top: 25px;
+
+    border-top:
+        var(--border);
+}
+
+
+.vision-process-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom:
+        35px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+.vision-process-arrow {
+    color:
+        var(--marker);
+
+    font-size: 32px;
+
+    transform:
+        rotate(5deg);
+}
+
+
+.vision-process-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    border-top:
+        1.5px
+        solid
+        var(--ink);
+
+    border-left:
+        1.5px
+        solid
+        var(--ink);
+}
+
+
+.vision-process-item {
+    min-height: 230px;
+
+    padding:
+        clamp(
+            20px,
+            3vw,
+            35px
+        );
+
+    border-right:
+        1.5px
+        solid
+        var(--ink);
+
+    border-bottom:
+        1.5px
+        solid
+        var(--ink);
+}
+
+
+.vision-process-item:nth-child(2) {
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.025
+        );
+}
+
+
+.vision-process-index {
+    display: inline-block;
+
+    margin-bottom: 45px;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.vision-process-item h3 {
+    margin:
+        0
+        0
+        20px;
+
+    font-size:
+        clamp(
+            23px,
+            2.5vw,
+            36px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing:
+        -0.045em;
+
+    text-transform: uppercase;
+}
+
+
+.vision-process-text p {
+    margin:
+        0
+        0
+        1em;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BEFORE VS AFTER
+========================================================= */
+
+.comparison-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        clamp(
+            22px,
+            4vw,
+            60px
+        );
+}
+
+
+.comparison-side {
+    min-width: 0;
+}
+
+
+.comparison-label-row {
+    display: flex;
+
+    margin-bottom: 12px;
+}
+
+
+.comparison-label {
+    display: inline-block;
+
+    padding:
+        6px
+        9px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--paper);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.comparison-side:first-child
+.comparison-label {
+    transform:
+        rotate(-1deg);
+}
+
+
+.comparison-side:last-child
+.comparison-label {
+    background:
+        var(--marker);
+
+    transform:
+        rotate(1deg);
+}
+
+
+.comparison-media {
+    width: 100%;
+}
+
+
+.comparison-image {
+    width: 100%;
+
+    aspect-ratio:
+        16 / 10;
+
+    object-fit: cover;
+
+    border:
+        var(--border);
+}
+
+
+.comparison-description {
+    padding:
+        18px
+        5px
+        0;
+
+    border-top:
+        0;
+}
+
+
+.comparison-description p {
+    max-width: 600px;
+
+    margin:
+        0
+        0
+        1em;
+
+    font-size:
+        16px;
+
+    line-height: 1.5;
+}
+
+
+.comparison-side:first-child {
+    transform:
+        rotate(-0.2deg);
+}
+
+
+.comparison-side:last-child {
+    transform:
+        rotate(0.2deg);
+}
+
+
+/* =========================================================
+   VISION + COMPARISON — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .vision-process-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   VISION + COMPARISON — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .vision-process-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .vision-process-item {
+        min-height: auto;
+    }
+
+
+    .vision-process-index {
+        margin-bottom: 25px;
+    }
+
+
+    .comparison-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 55px;
+    }
+
+
+    .comparison-side:first-child,
+    .comparison-side:last-child {
+        transform: none;
+    }
+
+}
+/* =========================================================
+   MY WORK
+========================================================= */
+
+.project-work-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap:
+        12px;
+}
+
+.project-work-list span {
+    padding:
+        12px
+        15px;
+
+    border:
+        2px
+        solid
+        var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+}
+
+.project-work-list span:nth-child(3n + 1) {
+    transform:
+        rotate(-0.8deg);
+}
+
+.project-work-list span:nth-child(3n + 2) {
+    transform:
+        rotate(0.7deg);
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.project-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        clamp(
+            25px,
+            4vw,
+            60px
+        );
+}
+
+.gallery-item {
+    margin: 0;
+}
+
+.gallery-item:nth-child(3n) {
+    grid-column:
+        1 / -1;
+}
+
+.gallery-media {
+    width: 100%;
+
+    border:
+        1.5px
+        solid
+        var(--ink);
+}
+
+.gallery-item figcaption {
+    margin-top: 10px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   PROJECT LINKS
+========================================================= */
+
+.project-links-section {
+    padding:
+        clamp(80px, 12vw, 170px)
+        var(--page-padding);
+
+    background:
+        var(--ink);
+
+    color:
+        var(--paper);
+
+    border-bottom:
+        var(--border);
+}
+
+.project-links-label {
+    margin:
+        0
+        0
+        45px;
+
+    color:
+        var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-big-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        24px
+        0;
+
+    border-top:
+        2px
+        solid
+        var(--paper);
+
+    color:
+        var(--paper);
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            90px
+        );
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing:
+        -0.055em;
+
+    text-decoration: none;
+
+    text-transform:
+        uppercase;
+}
+
+.project-big-link:last-child {
+    border-bottom:
+        2px
+        solid
+        var(--paper);
+}
+
+.project-big-link span {
+    color:
+        var(--marker);
+
+    transition:
+        transform
+        120ms
+        ease;
+}
+
+.project-big-link:hover span {
+    transform:
+        translate(
+            8px,
+            -8px
+        );
+}
+
+
+/* =========================================================
+   PROJECT END
+========================================================= */
+
+.project-end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        45px
+        var(--page-padding);
+
+    border-bottom:
+        var(--border);
+}
+
+.project-end a {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.project-end a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   PROJECT ERROR
+========================================================= */
+
+.project-error {
+    position: relative;
+
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(60px, 10vw, 150px)
+        var(--page-padding);
+
+    overflow: hidden;
+}
+
+.project-error p {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-error h1 {
+    margin:
+        30px
+        0
+        60px;
+
+    font-size:
+        clamp(
+            70px,
+            14vw,
+            200px
+        );
+
+    line-height: 0.75;
+
+    letter-spacing:
+        -0.07em;
+
+    text-transform:
+        uppercase;
+}
+
+.project-error .rough-button {
+    width: fit-content;
+}
+
+.project-error-mark {
+    position: absolute;
+
+    right: 6%;
+    top: 12%;
+
+    color:
+        var(--marker);
+
+    font-size:
+        clamp(
+            150px,
+            25vw,
+            350px
+        );
+
+    transform:
+        rotate(8deg);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   PROJECT PAGE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .project-meta {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .project-section {
+        grid-template-columns:
+            65px
+            minmax(0, 1fr);
+    }
+
+    .process-item {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   PROJECT PAGE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .project-back-row {
+        margin-bottom: 80px;
+    }
+
+    .project-title-area h1 {
+        font-size:
+            clamp(
+                60px,
+                20vw,
+                105px
+            );
+    }
+
+    .project-title-mark {
+        right: -8%;
+    }
+
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .project-focus {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .project-section {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .project-section-side {
+        padding: 0;
+    }
+
+    .project-section-header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .project-section-header h2 {
+        font-size:
+            clamp(
+                46px,
+                16vw,
+                82px
+            );
+    }
+
+    .punk-note {
+        transform:
+            rotate(-1deg);
+    }
+
+    .core-loop {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .loop-step {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .loop-arrow {
+        transform:
+            rotate(90deg);
+    }
+
+    .iteration-block {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item:nth-child(3n) {
+        grid-column: auto;
+    }
+
+    .project-end {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
