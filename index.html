@@ -8,33 +8,351 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Portfolio</title>
+    <meta
+        name="description"
+        content="Game Design, Unity prototyping and low-poly 3D portfolio."
+    >
+
+    <title>Eileen — Game Design Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <main class="setup-test">
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
 
-        <p class="setup-label">
-            GAME DESIGN / PORTFOLIO
-        </p>
+    <header class="site-header">
 
-        <h1>
-            Portfolio setup OK.
-        </h1>
+        <a
+            class="site-logo"
+            href="#top"
+            aria-label="Back to top"
+        >
+            EILEEN
+            <span>/ PORTFOLIO</span>
+        </a>
 
-        <p>
-            HTML, CSS and JavaScript are connected correctly.
-        </p>
+        <nav class="main-nav" aria-label="Main navigation">
 
-        <p id="javascript-test">
-            JavaScript: checking...
-        </p>
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#three-d">
+                3D
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main id="top">
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-index">
+                PORTFOLIO / 2026
+            </div>
+
+            <div class="hero-title-wrapper">
+
+                <p class="hand-note hero-note">
+                    gameplay first ↓
+                </p>
+
+                <h1 class="hero-title">
+                    GAME
+                    <br>
+                    DESIGN
+                </h1>
+
+            </div>
+
+            <div class="hero-bottom">
+
+                <p class="hero-description">
+                    Game designer focused on gameplay ideas,
+                    Unity prototyping and low-poly 3D.
+                </p>
+
+                <div class="hero-tags">
+                    <span>Gameplay</span>
+                    <span>Prototyping</span>
+                    <span>Unity</span>
+                    <span>Low-poly 3D</span>
+                </div>
+
+            </div>
+
+            <div class="hero-mark" aria-hidden="true">
+                ×
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             PROJECTS
+        =================================================== -->
+
+        <section
+            class="section projects-section"
+            id="projects"
+        >
+
+            <header class="section-header">
+
+                <div class="section-number">
+                    01 /
+                </div>
+
+                <div>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                    <p class="section-description">
+                        Games, gameplay prototypes and design studies.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div
+                class="work-grid"
+                id="projects-grid"
+            >
+                <!--
+                    Le card vengono create automaticamente
+                    da js/home.js leggendo js/data/projects.js
+                -->
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             3D WORK
+        =================================================== -->
+
+        <section
+            class="section models-section"
+            id="three-d"
+        >
+
+            <header class="section-header">
+
+                <div class="section-number">
+                    02 /
+                </div>
+
+                <div>
+
+                    <h2>
+                        3D Work
+                    </h2>
+
+                    <p class="section-description">
+                        Low-poly models and assets made for games
+                        and personal studies.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div
+                class="work-grid model-grid"
+                id="models-grid"
+            >
+                <!--
+                    Le card vengono create automaticamente
+                    da js/home.js leggendo js/data/models.js
+                -->
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ABOUT
+        =================================================== -->
+
+        <section
+            class="section about-section"
+            id="about"
+        >
+
+            <header class="section-header">
+
+                <div class="section-number">
+                    03 /
+                </div>
+
+                <div>
+                    <h2>
+                        About
+                    </h2>
+                </div>
+
+            </header>
+
+            <div class="about-layout">
+
+                <div class="about-main">
+
+                    <p class="about-big">
+                        I design gameplay systems,
+                        prototype them in Unity
+                        and build the assets I need
+                        to make ideas playable.
+                    </p>
+
+                </div>
+
+                <aside class="about-side">
+
+                    <div class="info-block">
+
+                        <h3>
+                            Focus
+                        </h3>
+
+                        <p>
+                            Game Design<br>
+                            Gameplay Design<br>
+                            Prototyping<br>
+                            Low-poly 3D
+                        </p>
+
+                    </div>
+
+                    <div class="info-block">
+
+                        <h3>
+                            Tools
+                        </h3>
+
+                        <p>
+                            Unity<br>
+                            C#<br>
+                            Blender / Maya<br>
+                            Substance Painter
+                        </p>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+            <p class="hand-note about-note">
+                build → test → break → rebuild
+            </p>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONTACT
+        =================================================== -->
+
+        <section
+            class="section contact-section"
+            id="contact"
+        >
+
+            <div class="section-number">
+                04 /
+            </div>
+
+            <div class="contact-main">
+
+                <p class="contact-small">
+                    CONTACT / LINKS
+                </p>
+
+                <h2>
+                    Let's make
+                    <br>
+                    something playable.
+                </h2>
+
+                <div class="contact-links">
+
+                    <!--
+                        Sostituiremo questi link
+                        quando prepareremo i dati reali.
+                    -->
+
+                    <a href="#" class="rough-button">
+                        Email ↗
+                    </a>
+
+                    <a href="#" class="rough-button">
+                        LinkedIn ↗
+                    </a>
+
+                    <a href="#" class="rough-button">
+                        itch.io ↗
+                    </a>
+
+                    <a href="#" class="rough-button">
+                        CV ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="site-footer">
+
+        <span>
+            EILEEN / GAME DESIGN
+        </span>
+
+        <span>
+            Built by hand.
+        </span>
+
+    </footer>
+
+
+    <!-- ==================================================
+         DATA
+         Prima carichiamo i dati,
+         poi il codice che li utilizza.
+    =================================================== -->
+
+    <script src="js/data/projects.js"></script>
+    <script src="js/data/models.js"></script>
     <script src="js/home.js"></script>
 
 </body>

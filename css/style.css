@@ -1,69 +1,976 @@
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    margin: 0;
-    padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    min-height: 100vh;
 
-    background: #e8e3d8;
-    color: #151515;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.018) 0,
+            rgba(0, 0, 0, 0.018) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        #eee9df;
+
+    color: #111111;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
+
+    overflow-x: hidden;
 }
 
-.setup-test {
-    min-height: 100vh;
+a {
+    color: inherit;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --paper: #eee9df;
+    --ink: #111111;
+    --marker: #ef4d36;
+    --soft-ink: #5d5a54;
+
+    --border: 2px solid var(--ink);
+
+    --page-padding: clamp(20px, 4vw, 64px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 76px;
+
+    padding:
+        18px
+        var(--page-padding);
+
+    border-bottom: var(--border);
+}
+
+.site-logo {
+    display: inline-flex;
+    gap: 8px;
+
+    color: var(--ink);
+
+    font-size: 15px;
+    font-weight: 900;
+
+    letter-spacing: 0.06em;
+
+    text-decoration: none;
+}
+
+.site-logo span {
+    font-weight: 400;
+}
+
+.main-nav {
+    display: flex;
+    gap: clamp(16px, 3vw, 44px);
+}
+
+.main-nav a {
+    position: relative;
+
+    color: var(--ink);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--marker);
+
+    transition: width 120ms ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 76px);
+
+    padding:
+        28px
+        var(--page-padding)
+        40px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
-    padding: 8vw;
+    border-bottom: var(--border);
+
+    overflow: hidden;
 }
 
-.setup-label {
-    margin: 0 0 20px;
+.hero-index {
+    margin-bottom: auto;
 
-    font-size: 14px;
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
     font-weight: 700;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
 }
 
-h1 {
-    max-width: 900px;
+.hero-title-wrapper {
+    position: relative;
 
-    margin: 0;
+    width: fit-content;
+}
 
-    font-size: clamp(
-        48px,
-        9vw,
-        130px
-    );
+.hero-title {
+    margin: 70px 0 40px;
 
-    line-height: 0.9;
+    font-size:
+        clamp(
+            88px,
+            17vw,
+            260px
+        );
+
+    font-weight: 900;
+
+    line-height: 0.72;
+
+    letter-spacing: -0.075em;
 
     text-transform: uppercase;
 }
 
-.setup-test > p:not(.setup-label) {
-    max-width: 600px;
+.hero-title::after {
+    content: "";
+
+    display: block;
+
+    width: 84%;
+    height: 8px;
 
     margin-top: 32px;
+    margin-left: 7%;
 
-    font-size: 18px;
-    line-height: 1.5;
+    background: var(--marker);
+
+    transform: rotate(-1deg);
 }
 
-#javascript-test {
-    font-family: monospace;
+.hero-note {
+    position: absolute;
+
+    top: 34px;
+    right: -120px;
+
+    transform: rotate(7deg);
+}
+
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-top: auto;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            20px,
+            2.4vw,
+            34px
+        );
+
+    line-height: 1.12;
+
+    letter-spacing: -0.03em;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    max-width: 420px;
+
+    gap: 8px;
+}
+
+.hero-tags span {
+    padding: 6px 9px;
+
+    border: 1.5px solid var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+}
+
+.hero-tags span:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.hero-tags span:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.hero-mark {
+    position: absolute;
+
+    right: -25px;
+    top: 18%;
+
+    color: var(--marker);
+
+    font-size: 180px;
+    font-weight: 100;
+
+    line-height: 1;
+
+    transform: rotate(9deg);
+
+    pointer-events: none;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   HANDWRITTEN / NOTES
+========================================================= */
+
+.hand-note {
+    margin: 0;
+
+    color: var(--marker);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   GENERIC SECTIONS
+========================================================= */
+
+.section {
+    position: relative;
+
+    padding:
+        clamp(60px, 9vw, 130px)
+        var(--page-padding);
+
+    border-bottom: var(--border);
+}
+
+.section-header {
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr);
+
+    gap: 24px;
+
+    margin-bottom:
+        clamp(
+            40px,
+            7vw,
+            90px
+        );
+}
+
+.section-number {
+    padding-top: 12px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section h2 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            60px,
+            10vw,
+            150px
+        );
+
+    line-height: 0.8;
+
+    letter-spacing: -0.07em;
+
+    text-transform: uppercase;
+}
+
+.section-description {
+    max-width: 550px;
+
+    margin:
+        28px
+        0
+        0;
+
+    color: var(--soft-ink);
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   WORK GRID
+========================================================= */
+
+.work-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        clamp(30px, 5vw, 70px)
+        clamp(20px, 3vw, 48px);
+}
+
+
+/* =========================================================
+   PROJECT / MODEL CARD
+========================================================= */
+
+.work-card {
+    position: relative;
+
+    display: block;
+
+    color: var(--ink);
+
+    text-decoration: none;
+}
+
+.work-card:nth-child(even) {
+    margin-top: 70px;
+}
+
+.work-card-media {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    border: var(--border);
+
+    background: #d8d2c6;
+
+    overflow: hidden;
+
+    transition:
+        transform 130ms ease,
+        box-shadow 130ms ease;
+}
+
+.work-card:hover .work-card-media,
+.work-card:focus-visible .work-card-media {
+    transform:
+        translate(-5px, -5px)
+        rotate(-0.4deg);
+
+    box-shadow:
+        7px 7px 0
+        var(--ink);
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        saturate(0.92)
+        contrast(1.04);
+}
+
+.work-card-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    padding: 30px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.work-card-index {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 2;
+
+    padding:
+        5px
+        7px;
+
+    background: var(--paper);
+
+    border: 1.5px solid var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+}
+
+.work-card-info {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap: 20px;
+
+    padding-top: 15px;
+}
+
+.work-card-title {
+    margin: 0;
+
+    font-size:
+        clamp(
+            23px,
+            3vw,
+            40px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+    text-transform: uppercase;
+}
+
+.work-card-type {
+    margin:
+        9px
+        0
+        0;
+
+    color: var(--soft-ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+}
+
+.work-card-arrow {
+    font-size: 27px;
+
+    transition:
+        transform
+        120ms
+        ease;
+}
+
+.work-card:hover .work-card-arrow {
+    transform:
+        translate(
+            4px,
+            -4px
+        );
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    position: relative;
+
+    min-height: 230px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    border:
+        2px
+        dashed
+        var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+.empty-state::before {
+    content: "×";
+
+    position: absolute;
+
+    top: -22px;
+    right: 18px;
+
+    padding: 0 8px;
+
+    background: var(--paper);
+
+    color: var(--marker);
+
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(220px, 0.8fr);
+
+    gap:
+        clamp(
+            50px,
+            9vw,
+            150px
+        );
+}
+
+.about-big {
+    max-width: 1000px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            92px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.97;
+
+    letter-spacing: -0.055em;
+}
+
+.about-side {
+    display: flex;
+    flex-direction: column;
+
+    gap: 45px;
+}
+
+.info-block {
+    border-top: var(--border);
+
+    padding-top: 12px;
+}
+
+.info-block h3 {
+    margin:
+        0
+        0
+        15px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+}
+
+.info-block p {
+    margin: 0;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+}
+
+.about-note {
+    width: fit-content;
+
+    margin:
+        80px
+        0
+        0
+        12%;
+
+    padding-bottom: 5px;
+
+    border-bottom:
+        3px
+        solid
+        var(--marker);
+
+    transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr);
+}
+
+.contact-small {
+    margin:
+        0
+        0
+        30px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+}
+
+.contact-main h2 {
+    max-width: 1200px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top:
+        clamp(
+            55px,
+            8vw,
+            110px
+        );
+}
+
+.rough-button {
+    display: inline-block;
+
+    padding:
+        13px
+        17px;
+
+    border:
+        2px
+        solid
+        var(--ink);
+
+    color: var(--ink);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        transform
+        100ms
+        ease,
+        background
+        100ms
+        ease,
+        color
+        100ms
+        ease;
+}
+
+.rough-button:nth-child(2n) {
+    transform:
+        rotate(1deg);
+}
+
+.rough-button:hover,
+.rough-button:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+
+    transform:
+        translate(
+            -3px,
+            -3px
+        )
+        rotate(-1deg);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        18px
+        var(--page-padding);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible {
+    outline:
+        4px
+        solid
+        var(--marker);
+
+    outline-offset: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-note {
+        right: 0;
+    }
+
+    .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-tags {
+        justify-content: flex-start;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card:nth-child(even) {
+        margin-top: 0;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .main-nav {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height:
+            calc(
+                100svh - 115px
+            );
+    }
+
+    .hero-title {
+        margin-top: 90px;
+
+        font-size:
+            clamp(
+                68px,
+                25vw,
+                120px
+            );
+    }
+
+    .hero-note {
+        top: 30px;
+        right: 0;
+    }
+
+    .hero-mark {
+        right: -40px;
+
+        font-size: 125px;
+    }
+
+    .section-header {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .section-number {
+        padding: 0;
+    }
+
+    .section h2 {
+        font-size:
+            clamp(
+                55px,
+                19vw,
+                100px
+            );
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+    }
+
 }
