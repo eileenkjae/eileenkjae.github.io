@@ -9,11 +9,13 @@ Questo file:
 2. cerca il modello dentro MODELS;
 3. costruisce la pagina;
 4. crea <model-viewer>;
-5. mostra informazioni e breakdown opzionali.
+5. supporta modelli statici e animati;
+6. mostra le informazioni tecniche;
+7. mostra il breakdown opzionale.
 
 Esempio:
 
-model.html?id=viewer-test
+model.html?id=pg-brush
 */
 
 
@@ -165,6 +167,12 @@ function createViewer(model) {
     }
 
 
+    /*
+    -----------------------------------------------------
+    POSTER
+    -----------------------------------------------------
+    */
+
     const poster =
         model.poster
             ? `
@@ -175,11 +183,23 @@ function createViewer(model) {
             : "";
 
 
+    /*
+    -----------------------------------------------------
+    AUTO ROTATE
+    -----------------------------------------------------
+    */
+
     const autoRotate =
         model.autoRotate === false
             ? ""
             : "auto-rotate";
 
+
+    /*
+    -----------------------------------------------------
+    CAMERA
+    -----------------------------------------------------
+    */
 
     const cameraOrbit =
         model.cameraOrbit
@@ -211,6 +231,50 @@ function createViewer(model) {
             : "";
 
 
+    /*
+    -----------------------------------------------------
+    ANIMATION
+
+    playAnimation: true
+        → autoplay
+
+    animationName:
+        → chooses a specific animation clip
+    -----------------------------------------------------
+    */
+
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    const autoplay =
+        model.playAnimation === true
+        &&
+        !prefersReducedMotion
+            ? "autoplay"
+            : "";
+
+
+    const animationName =
+        model.playAnimation === true
+        &&
+        model.animationName
+            ? `
+                animation-name="${escapeHTML(
+                    model.animationName
+                )}"
+            `
+            : "";
+
+
+    /*
+    -----------------------------------------------------
+    MODEL VIEWER
+    -----------------------------------------------------
+    */
+
     return `
         <model-viewer
 
@@ -235,6 +299,10 @@ function createViewer(model) {
 
             ${fieldOfView}
 
+            ${animationName}
+
+            ${autoplay}
+
             camera-controls
 
             touch-action="pan-y"
@@ -257,7 +325,8 @@ function createViewer(model) {
 ===================================================== */
 
 function createBreakdown(
-    items
+    items,
+    sectionNumber
 ) {
 
     if (
@@ -333,7 +402,7 @@ function createBreakdown(
         <section class="model-section">
 
             <div class="model-section-number">
-                02 /
+                ${String(sectionNumber).padStart(2, "0")} /
             </div>
 
 
@@ -492,23 +561,32 @@ function buildModelPage() {
 
     /* -----------------------------------------
        INFO
+
+       3D equivalent of the project metadata.
+
+       Empty values are automatically hidden.
     ----------------------------------------- */
 
     const infoHTML = `
 
         ${createInfoField(
-            "Type",
+            "Asset Type",
             currentModel.type
+        )}
+
+        ${createInfoField(
+            "From Project",
+            currentModel.fromProject
+        )}
+
+        ${createInfoField(
+            "Created",
+            currentModel.created
         )}
 
         ${createInfoField(
             "Software",
             currentModel.software
-        )}
-
-        ${createInfoField(
-            "Year",
-            currentModel.year
         )}
 
         ${createInfoField(
@@ -527,6 +605,76 @@ function buildModelPage() {
         )}
 
     `;
+
+
+    /* -----------------------------------------
+       SECTION NUMBERS
+    ----------------------------------------- */
+
+    let nextSectionNumber = 1;
+
+    let descriptionHTML = "";
+
+
+    if (currentModel.description) {
+
+        descriptionHTML = `
+
+            <section class="model-section">
+
+                <div class="model-section-number">
+                    ${String(nextSectionNumber).padStart(2, "0")} /
+                </div>
+
+
+                <div class="model-section-content">
+
+                    <header class="model-section-header">
+
+                        <h2>
+                            About
+                        </h2>
+
+                        <span class="punk-note">
+                            model notes →
+                        </span>
+
+                    </header>
+
+
+                    <div class="model-description">
+
+                        ${createParagraphs(
+                            currentModel.description
+                        )}
+
+                    </div>
+
+                </div>
+
+            </section>
+        `;
+
+
+        nextSectionNumber += 1;
+    }
+
+
+    const breakdownHTML =
+        createBreakdown(
+            currentModel.gallery,
+            nextSectionNumber
+        );
+
+
+    /* -----------------------------------------
+       VIEWER INSTRUCTION
+    ----------------------------------------- */
+
+    const viewerInstruction =
+        currentModel.playAnimation === true
+            ? "ANIMATION / DRAG / ROTATE / ZOOM"
+            : "DRAG / ROTATE / ZOOM";
 
 
     /* -----------------------------------------
@@ -616,7 +764,7 @@ function buildModelPage() {
                     </span>
 
                     <span>
-                        DRAG / ROTATE / ZOOM
+                        ${viewerInstruction}
                     </span>
 
                 </div>
@@ -649,7 +797,7 @@ function buildModelPage() {
 
 
             <!-- =================================
-                 INFO
+                 MODEL INFORMATION
             ================================== -->
 
             ${
@@ -665,13 +813,17 @@ function buildModelPage() {
             }
 
 
+            <!-- =================================
+                 CREDIT
+            ================================== -->
+
             ${
                 currentModel.credit
                     ? `
                         <div class="model-credit">
 
                             <span>
-                                TEST / CREDIT
+                                CREDIT /
                             </span>
 
                             ${
@@ -708,59 +860,17 @@ function buildModelPage() {
 
 
         <!-- =====================================
-             DESCRIPTION
+             ABOUT
         ====================================== -->
 
-        ${
-            currentModel.description
-
-                ? `
-                    <section class="model-section">
-
-                        <div class="model-section-number">
-                            01 /
-                        </div>
-
-
-                        <div class="model-section-content">
-
-                            <header class="model-section-header">
-
-                                <h2>
-                                    About
-                                </h2>
-
-                                <span class="punk-note">
-                                    model notes →
-                                </span>
-
-                            </header>
-
-
-                            <div class="model-description">
-
-                                ${createParagraphs(
-                                    currentModel.description
-                                )}
-
-                            </div>
-
-                        </div>
-
-                    </section>
-                `
-
-                : ""
-        }
+        ${descriptionHTML}
 
 
         <!-- =====================================
              BREAKDOWN
         ====================================== -->
 
-        ${createBreakdown(
-            currentModel.gallery
-        )}
+        ${breakdownHTML}
 
 
         <!-- =====================================
@@ -792,11 +902,13 @@ function buildModelPage() {
 
 
 buildModelPage();
+
+
 /* =====================================================
    REDUCED MOTION
 ===================================================== */
 
-const prefersReducedMotion =
+const reducedMotionPreference =
     window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     );
@@ -816,22 +928,56 @@ function updateModelMotionPreference() {
 
 
     if (
-        prefersReducedMotion.matches
+        reducedMotionPreference.matches
     ) {
 
         viewer.removeAttribute(
             "auto-rotate"
         );
 
+        viewer.removeAttribute(
+            "autoplay"
+        );
+
+        /*
+        If the animation has already started,
+        pause it when the API is available.
+        */
+
+        if (
+            typeof viewer.pause === "function"
+        ) {
+
+            viewer.pause();
+        }
+
+        return;
     }
 
+
+    /*
+    If reduced motion is disabled again,
+    restart the animation only for models
+    configured as animated.
+    */
+
+    if (
+        currentModel
+        &&
+        currentModel.playAnimation === true
+        &&
+        typeof viewer.play === "function"
+    ) {
+
+        viewer.play();
+    }
 }
 
 
 updateModelMotionPreference();
 
 
-prefersReducedMotion.addEventListener(
+reducedMotionPreference.addEventListener(
     "change",
     updateModelMotionPreference
 );
