@@ -198,7 +198,7 @@ The original concept was much larger than the first milestone could support, so 
                             "video",
 
                         src:
-                            "assets/projects/b-rush/drawing.mp4",
+                            "assets/projects/b-rush/bossfight - Trim.mp4",
 
                         autoplay:
                             true,
@@ -477,41 +477,190 @@ The original concept was much larger than the first milestone could support, so 
            GALLERY
         ============================================= */
 
-        gallery: [
+       /* =========================================================
+   js/data/projects.js
 
-            {
+   SOSTITUISCI SOLO L'ATTUALE BLOCCO "gallery" DI B-RUSH
+========================================================= */
 
-                type:
-                    "image",
+gallery: [
 
-                src:
-                    "assets/projects/b-rush/map-top.png",
+    
 
-                alt:
-                    "Top-down development view of the B-Rush prototype level.",
+   
 
-                caption:
-                    "Level layout — top-down development view"
+    {
+        type: "image",
 
-            },
+        src:
+            "assets/projects/b-rush/narrative.jpg",
 
-            {
+        alt:
+            "Character illustration for B-Rush.",
 
-                type:
-                    "image",
+        caption:
+            "Evelyn#123",
 
-                src:
-                    "assets/projects/b-rush/scene-view.png",
+        layout:
+            "portrait"
+    },
 
-                alt:
-                    "B-Rush environment being assembled inside the Unity editor.",
+    {
+        type: "image",
 
-                caption:
-                    "Unity scene view — environment assembly and visual integration"
+        src:
+            "assets/projects/b-rush/narrative2.jpg",
 
-            }
+        alt:
+            "Character illustration for B-Rush.",
 
-        ],
+        caption:
+            "Evelyn#124",
+
+        layout:
+            "contain"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/narrative3.jpg",
+
+        alt:
+            "Character design illustration for B-Rush.",
+
+        caption:
+            "Evelyn#125",
+
+        layout:
+            "portrait"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/sketches.png",
+
+        alt:
+            "Character design sheet for B-Rush.",
+
+        caption:
+            "Evelyn#126",
+
+        layout:
+            "portrait"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/sketches1.png",
+
+        alt:
+            "Character design sheet for B-Rush.",
+
+        caption:
+            "Evelyn#127",
+
+        layout:
+            "portrait"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/narrative1.jpg",
+
+        alt:
+            "Creature development sketches showing different visual states.",
+
+        caption:
+            "Creature concept — transformation study",
+
+        layout:
+            "portrait"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/hud.png",
+
+        alt:
+            "B-Rush HUD graphic study.",
+
+        caption:
+            "HUD#123",
+
+        layout:
+            "contain"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/hud1.png",
+
+        alt:
+            "B-Rush HUD graphic study with green and red variants.",
+
+        caption:
+            "HUD#124",
+
+        layout:
+            "contain"
+    },
+
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/hud2.gif",
+
+        alt:
+            "Animated B-Rush loading screen.",
+
+        caption:
+            "HUD#125 — loading screen",
+
+        layout:
+            "portrait"
+    },
+    {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/map-top.png",
+
+        alt:
+            "Top-down development view of the B-Rush prototype level.",
+
+        caption:
+            "Level layout — top-down development view"
+    },
+     {
+        type: "image",
+
+        src:
+            "assets/projects/b-rush/scene-view1.png",
+
+        alt:
+            "B-Rush gameplay screenshot showing layered paint splash effects during combat.",
+
+        caption:
+            "Combat VFX — paint splash feedback during gameplay",
+
+        layout:
+            "wide"
+    }
+
+],
 
 
         /* =============================================

@@ -6508,3 +6508,1194 @@ Reset previous repeated category colors for this section.
         font-size: 11px;
     }
 }
+/* =========================================================
+   css/acid-hud.css
+
+   INCOLLA QUESTO BLOCCO ALLA FINE DEL FILE.
+   DEVE RIMANERE DOPO TUTTI GLI ALTRI STILI.
+========================================================= */
+
+
+/* =========================================================
+   FINAL GALLERY
+========================================================= */
+
+.project-gallery {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    align-items:
+        start;
+
+    gap:
+        18px;
+
+    width:
+        100%;
+
+    max-width:
+        1200px;
+}
+
+
+.project-gallery .gallery-item {
+
+    min-width:
+        0;
+
+    margin:
+        0;
+
+    grid-column:
+        auto !important;
+}
+
+
+.project-gallery .gallery-media {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        16 / 10;
+
+    object-fit:
+        cover;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--paper);
+}
+
+
+/* ---------------------------------------------------------
+   LARGE GAMEPLAY / ENVIRONMENT IMAGE
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--wide {
+
+    grid-column:
+        1 / -1 !important;
+}
+
+
+.project-gallery
+.gallery-item--wide
+.gallery-media {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        auto;
+
+    object-fit:
+        contain;
+}
+
+
+/* ---------------------------------------------------------
+   CHARACTER ART
+
+   Keeps the entire illustration visible instead of
+   cropping heads / legs / character sheets.
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--portrait
+.gallery-media {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        auto;
+
+    object-fit:
+        contain;
+}
+
+
+/* ---------------------------------------------------------
+   HUD / ART THAT MUST NOT BE CROPPED
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--contain
+.gallery-media {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        auto;
+
+    object-fit:
+        contain;
+}
+
+
+/* ---------------------------------------------------------
+   GIF
+
+   GIF files are rendered through the same IMG element,
+   so animation remains native in the browser.
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--gif
+.gallery-media {
+
+    display:
+        block;
+}
+
+
+/* ---------------------------------------------------------
+   CAPTIONS
+--------------------------------------------------------- */
+
+.gallery-item figcaption {
+
+    margin-top:
+        7px;
+
+    padding-left:
+        2px;
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1.35;
+
+    letter-spacing:
+        0.04em;
+}
+
+
+.gallery-item figcaption::before {
+
+    content:
+        "// ";
+
+    color:
+        var(--pink);
+}
+
+
+/* =========================================================
+   POINT CLOUD RECOGNIZER
+   FULL WIDTH / NO HORIZONTAL SCROLL
+========================================================= */
+
+.drawing-system-main {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    align-items:
+        start;
+
+    gap:
+        22px;
+
+    width:
+        100%;
+
+    max-width:
+        1200px;
+}
+
+
+.drawing-code-column {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+}
+
+
+.drawing-code-window {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--ink);
+
+    box-shadow:
+        6px
+        6px
+        0
+        var(--mint);
+}
+
+
+.drawing-code-toolbar {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    min-height:
+        38px;
+
+    padding:
+        7px
+        10px;
+
+    border-bottom:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--foam);
+
+    color:
+        var(--ink);
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1.2;
+}
+
+
+.drawing-code-toolbar
+span:nth-child(2) {
+
+    color:
+        var(--soft-ink);
+}
+
+
+.drawing-code-toolbar
+span:last-child {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--pink);
+
+    font-weight:
+        900;
+}
+
+
+/* ---------------------------------------------------------
+   NO SCROLLBAR
+--------------------------------------------------------- */
+
+.drawing-code-body {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    overflow-x:
+        hidden;
+
+    padding:
+        10px
+        0
+        12px;
+}
+
+
+/* ---------------------------------------------------------
+   CODE LINES
+--------------------------------------------------------- */
+
+.code-line {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        44px
+        minmax(0, 1fr);
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    min-height:
+        24px;
+
+    padding-right:
+        12px;
+
+    color:
+        #f2efe6;
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+
+        clamp(
+            10px,
+            0.68vw,
+            12px
+        );
+
+    line-height:
+        1.55;
+}
+
+
+/* no differently coloured code rows */
+
+.code-line.is-highlighted {
+
+    background:
+        transparent;
+}
+
+
+.code-line-number {
+
+    padding:
+        1px
+        10px
+        1px
+        0;
+
+    border-right:
+        1px solid
+        rgba(
+            242,
+            239,
+            230,
+            0.16
+        );
+
+    color:
+        var(--pink);
+
+    text-align:
+        right;
+
+    user-select:
+        none;
+}
+
+
+.code-line code {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    padding-left:
+        14px;
+
+    color:
+        inherit;
+
+    font:
+        inherit;
+
+    white-space:
+        pre-wrap;
+
+    overflow-wrap:
+        anywhere;
+
+    word-break:
+        normal;
+}
+
+
+/* ---------------------------------------------------------
+   DESIGN NOTES NOW SIT UNDER THE CODE
+--------------------------------------------------------- */
+
+.drawing-design-notes {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        10px;
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 980px) {
+
+    .drawing-design-notes {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .project-gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-gallery
+    .gallery-item--wide {
+
+        grid-column:
+            auto !important;
+    }
+
+
+    .project-gallery
+    .gallery-media {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        aspect-ratio:
+            auto;
+
+        object-fit:
+            contain;
+    }
+
+
+    .drawing-code-toolbar {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+    }
+
+
+    .drawing-code-toolbar
+    span:nth-child(2) {
+
+        grid-column:
+            1 / -1;
+
+        grid-row:
+            2;
+    }
+
+
+    .drawing-code-toolbar
+    span:last-child {
+
+        grid-column:
+            2;
+
+        grid-row:
+            1;
+    }
+
+
+    .code-line {
+
+        grid-template-columns:
+            34px
+            minmax(0, 1fr);
+
+        padding-right:
+            7px;
+
+        font-size:
+            10px;
+
+        line-height:
+            1.45;
+    }
+
+
+    .code-line-number {
+
+        padding-right:
+            7px;
+    }
+
+
+    .code-line code {
+
+        padding-left:
+            9px;
+    }
+
+
+    .drawing-design-notes {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+/* =========================================================
+   FINAL FIX — CODE ALIGNMENT
+========================================================= */
+
+.drawing-system-main {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    align-items:
+        start;
+
+    gap:
+        22px;
+
+    width:
+        100%;
+
+    max-width:
+        1200px;
+}
+
+
+.drawing-code-column {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+}
+
+
+.drawing-code-window {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--ink);
+
+    box-shadow:
+        6px
+        6px
+        0
+        var(--mint);
+}
+
+
+.drawing-code-body {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    overflow-x:
+        hidden;
+
+    padding:
+        10px
+        0
+        12px;
+}
+
+
+.code-line {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        44px
+        minmax(0, 1fr);
+
+    align-items:
+        start;
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    min-height:
+        24px;
+
+    padding:
+        0
+        12px
+        0
+        0;
+
+    color:
+        #f2efe6;
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+
+        clamp(
+            10px,
+            0.68vw,
+            12px
+        );
+
+    line-height:
+        1.55;
+}
+
+
+.code-line.is-highlighted {
+
+    background:
+        transparent;
+}
+
+
+.code-line-number {
+
+    display:
+        block;
+
+    margin:
+        0;
+
+    padding:
+        0
+        10px
+        0
+        0;
+
+    border-right:
+        1px solid
+        rgba(
+            242,
+            239,
+            230,
+            0.16
+        );
+
+    color:
+        var(--pink);
+
+    line-height:
+        inherit;
+
+    text-align:
+        right;
+
+    user-select:
+        none;
+}
+
+
+.code-line code {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+    margin:
+        0;
+
+    padding:
+        0
+        0
+        0
+        14px;
+
+    color:
+        inherit;
+
+    font:
+        inherit;
+
+    line-height:
+        inherit;
+
+    white-space:
+        pre-wrap;
+
+    overflow-wrap:
+        anywhere;
+
+    word-break:
+        normal;
+}
+
+
+/* =========================================================
+   FINAL FIX — GALLERY
+========================================================= */
+
+.project-gallery {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    align-items:
+        start;
+
+    gap:
+        18px;
+
+    width:
+        100%;
+
+    max-width:
+        1200px;
+}
+
+
+.project-gallery
+.gallery-item {
+
+    min-width:
+        0;
+
+    margin:
+        0;
+
+    grid-column:
+        auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   UNIFORM MEDIA FRAME
+
+   Tutte le immagini occupano uno spazio simile.
+   Nessuna viene tagliata.
+--------------------------------------------------------- */
+
+.gallery-media-frame {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        100%;
+
+    height:
+
+        clamp(
+            230px,
+            28vw,
+            370px
+        );
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--paper);
+}
+
+
+.project-gallery
+.gallery-media {
+
+    display:
+        block;
+
+    width:
+        100% !important;
+
+    height:
+        100% !important;
+
+    max-width:
+        100%;
+
+    max-height:
+        100%;
+
+    margin:
+        0;
+
+    border:
+        0 !important;
+
+    aspect-ratio:
+        auto !important;
+
+    object-fit:
+        contain !important;
+
+    object-position:
+        center;
+}
+
+
+/* ---------------------------------------------------------
+   WIDE IMAGES
+
+   Gameplay/environment possono usare entrambe le colonne,
+   ma hanno comunque un limite di altezza.
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--wide {
+
+    grid-column:
+        1 / -1 !important;
+}
+
+
+.project-gallery
+.gallery-item--wide
+.gallery-media-frame {
+
+    height:
+
+        clamp(
+            300px,
+            38vw,
+            500px
+        );
+}
+
+
+/* ---------------------------------------------------------
+   PORTRAIT / CHARACTER ART
+
+   Non diventa enorme solo perché l'immagine è verticale.
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--portrait
+.gallery-media-frame {
+
+    height:
+
+        clamp(
+            250px,
+            29vw,
+            390px
+        );
+}
+
+
+/* ---------------------------------------------------------
+   HUD / CONTAIN
+
+   Stesso principio: tutto visibile, dimensione controllata.
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--contain
+.gallery-media-frame {
+
+    height:
+
+        clamp(
+            210px,
+            25vw,
+            330px
+        );
+}
+
+
+/* ---------------------------------------------------------
+   GIF
+--------------------------------------------------------- */
+
+.project-gallery
+.gallery-item--gif
+.gallery-media {
+
+    object-fit:
+        contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   CAPTIONS
+--------------------------------------------------------- */
+
+.gallery-item figcaption {
+
+    margin-top:
+        7px;
+
+    padding-left:
+        2px;
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1.35;
+
+    letter-spacing:
+        0.04em;
+}
+
+
+.gallery-item figcaption::before {
+
+    content:
+        "// ";
+
+    color:
+        var(--pink);
+}
+
+
+/* =========================================================
+   DESIGN NOTES
+========================================================= */
+
+.drawing-design-notes {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        10px;
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .project-gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-gallery
+    .gallery-item--wide {
+
+        grid-column:
+            auto !important;
+    }
+
+
+    .gallery-media-frame,
+    .project-gallery
+    .gallery-item--portrait
+    .gallery-media-frame,
+    .project-gallery
+    .gallery-item--contain
+    .gallery-media-frame {
+
+        height:
+
+            clamp(
+                230px,
+                72vw,
+                340px
+            );
+    }
+
+
+    .project-gallery
+    .gallery-item--wide
+    .gallery-media-frame {
+
+        height:
+
+            clamp(
+                220px,
+                58vw,
+                320px
+            );
+    }
+
+
+    .code-line {
+
+        grid-template-columns:
+            34px
+            minmax(0, 1fr);
+
+        padding-right:
+            7px;
+
+        font-size:
+            10px;
+    }
+
+
+    .code-line-number {
+
+        padding-right:
+            7px;
+    }
+
+
+    .code-line code {
+
+        padding-left:
+            9px;
+    }
+
+
+    .drawing-design-notes {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
