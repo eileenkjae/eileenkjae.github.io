@@ -483,7 +483,7 @@ function createVisionSection(
                     </h2>
 
                     <span class="punk-note">
-                        what did I want this to be?
+                        what I wanted this to be?//
                     </span>
 
                 </header>
@@ -512,7 +512,264 @@ function createVisionSection(
     `;
 }
 
+/* =====================================================
+   GAMEPLAY SHOWCASE
+===================================================== */
 
+function createGameplaySection(
+    number,
+    gameplay
+) {
+
+    if (
+        !gameplay
+        ||
+        (
+            !gameplay.intro
+            &&
+            (
+                !gameplay.features
+                ||
+                gameplay.features.length === 0
+            )
+            &&
+            (
+                !gameplay.loadout
+                ||
+                gameplay.loadout.length === 0
+            )
+        )
+    ) {
+        return "";
+    }
+
+
+    /* -----------------------------------------
+       FEATURE MEDIA
+    ----------------------------------------- */
+
+    const featuresHTML =
+        gameplay.features
+        &&
+        gameplay.features.length > 0
+
+            ? `
+                <div class="gameplay-features">
+
+                    ${gameplay.features
+                        .map(
+                            (feature, index) => `
+                                <article class="gameplay-feature">
+
+                                    <div class="gameplay-feature-top">
+
+                                        <span class="gameplay-feature-index">
+                                            ${String(
+                                                index + 1
+                                            ).padStart(
+                                                2,
+                                                "0"
+                                            )}
+                                        </span>
+
+                                        <h3>
+                                            ${escapeHTML(
+                                                feature.title ||
+                                                "Gameplay"
+                                            )}
+                                        </h3>
+
+                                    </div>
+
+
+                                    ${
+                                        feature.media
+                                            ? `
+                                                <div class="gameplay-feature-media">
+
+                                                    ${createMedia(
+                                                        feature.media,
+                                                        "gameplay-media"
+                                                    )}
+
+                                                </div>
+                                            `
+                                            : ""
+                                    }
+
+
+                                    ${
+                                        feature.text
+                                            ? `
+                                                <div class="gameplay-feature-text">
+
+                                                    ${createParagraphs(
+                                                        feature.text
+                                                    )}
+
+                                                </div>
+                                            `
+                                            : ""
+                                    }
+
+                                </article>
+                            `
+                        )
+                        .join("")
+                    }
+
+                </div>
+            `
+
+            : "";
+
+
+    /* -----------------------------------------
+       LOADOUT / TOOL ROLES
+    ----------------------------------------- */
+
+    const loadoutHTML =
+        gameplay.loadout
+        &&
+        gameplay.loadout.length > 0
+
+            ? `
+                <div class="gameplay-loadout">
+
+                    <div class="gameplay-loadout-heading">
+
+                        <span>
+                            LOADOUT /
+                        </span>
+
+                        <span>
+                            04 CIGARETTES
+                        </span>
+
+                    </div>
+
+
+                    <div class="gameplay-loadout-grid">
+
+                        ${gameplay.loadout
+                            .map(
+                                (item, index) => `
+                                    <article class="gameplay-loadout-item">
+
+                                        <span class="gameplay-loadout-index">
+                                            ${String(
+                                                index + 1
+                                            ).padStart(
+                                                2,
+                                                "0"
+                                            )}
+                                        </span>
+
+
+                                        <h3>
+                                            ${escapeHTML(
+                                                item.name
+                                            )}
+                                        </h3>
+
+
+                                        <p class="gameplay-loadout-effect">
+                                            ${escapeHTML(
+                                                item.effect
+                                            )}
+                                        </p>
+
+
+                                        ${
+                                            item.meta
+                                                ? `
+                                                    <p class="gameplay-loadout-meta">
+                                                        ${escapeHTML(
+                                                            item.meta
+                                                        )}
+                                                    </p>
+                                                `
+                                                : ""
+                                        }
+
+                                    </article>
+                                `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+                </div>
+            `
+
+            : "";
+
+
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
+
+    return `
+        <section class="project-section gameplay-section">
+
+            <div class="project-section-side">
+
+                <span class="project-section-number">
+                    ${escapeHTML(number)}
+                </span>
+
+            </div>
+
+
+            <div class="project-section-content">
+
+                <header class="project-section-header">
+
+                    <h2>
+                        Gameplay
+                    </h2>
+
+
+                    ${
+                        gameplay.note
+                            ? `
+                                <span class="punk-note">
+                                    ${escapeHTML(
+                                        gameplay.note
+                                    )}
+                                </span>
+                            `
+                            : ""
+                    }
+
+                </header>
+
+
+                ${
+                    gameplay.intro
+                        ? `
+                            <div class="project-text gameplay-intro">
+
+                                ${createParagraphs(
+                                    gameplay.intro
+                                )}
+
+                            </div>
+                        `
+                        : ""
+                }
+
+
+                ${featuresHTML}
+
+                ${loadoutHTML}
+
+            </div>
+
+        </section>
+    `;
+}
 /* =====================================================
    CORE LOOP
 ===================================================== */
@@ -703,7 +960,8 @@ function createBeforeAfterSection(
                     </h2>
 
                     <span class="punk-note">
-                        same idea / different state
+                        do you see the vision? i clearly did
+                        //
                     </span>
 
                 </header>
@@ -734,6 +992,10 @@ function createBeforeAfterSection(
    MY WORK
 ===================================================== */
 
+/* =====================================================
+   MY WORK
+===================================================== */
+
 function createWorkSection(
     number,
     items
@@ -746,6 +1008,56 @@ function createWorkSection(
     ) {
         return "";
     }
+
+
+    const workItems =
+        items
+            .map(
+                item => {
+
+                    /*
+                    Supporta sia il nuovo formato:
+
+                    {
+                        label: "...",
+                        category: "design"
+                    }
+
+                    sia eventuali vecchie stringhe.
+                    */
+
+                    const isObject =
+                        typeof item === "object"
+                        &&
+                        item !== null;
+
+
+                    const label =
+                        isObject
+                            ? item.label
+                            : item;
+
+
+                    const category =
+                        isObject
+                        &&
+                        item.category
+
+                            ? `work-${escapeHTML(
+                                item.category
+                            )}`
+
+                            : "work-default";
+
+
+                    return `
+                        <span class="${category}">
+                            ${escapeHTML(label)}
+                        </span>
+                    `;
+                }
+            )
+            .join("");
 
 
     return `
@@ -768,21 +1080,16 @@ function createWorkSection(
                         My Work
                     </h2>
 
+                    <span class="punk-note">
+                        what I actually did ///
+                    </span>
+
                 </header>
 
 
                 <div class="project-work-list">
 
-                    ${items
-                        .map(
-                            item => `
-                                <span>
-                                    ${escapeHTML(item)}
-                                </span>
-                            `
-                        )
-                        .join("")
-                    }
+                    ${workItems}
 
                 </div>
 
@@ -892,7 +1199,7 @@ function createLinksSection(links) {
         <section class="project-links-section">
 
             <p class="project-links-label">
-                PLAY / WATCH / MORE
+                TRY IT NOW
             </p>
 
 
@@ -1123,7 +1430,33 @@ function buildProject() {
             )
     );
 
+/* GAMEPLAY */
 
+addSection(
+    currentProject.gameplay
+    &&
+    (
+        currentProject.gameplay.intro
+        ||
+        (
+            currentProject.gameplay.features
+            &&
+            currentProject.gameplay.features.length
+        )
+        ||
+        (
+            currentProject.gameplay.loadout
+            &&
+            currentProject.gameplay.loadout.length
+        )
+    ),
+
+    number =>
+        createGameplaySection(
+            number,
+            currentProject.gameplay
+        )
+);
     /* CORE LOOP */
 
     addSection(

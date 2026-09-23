@@ -4728,3 +4728,1486 @@ Tiny technical marks.
     }
 
 }
+/* =========================================================
+   BACKGROUND DOODLE COLLAGE
+========================================================= */
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/*
+Doodle layer.
+
+Molto leggero: deve sembrare parte della carta,
+non un'immagine messa dietro al sito.
+*/
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background-image:
+        url("image-removebg-preview.png");
+
+    background-repeat:
+        repeat;
+
+    background-size:
+        520px 520px;
+
+    background-position:
+        80px 100px;
+
+    opacity:
+        0.035;
+
+    filter:
+        contrast(1.1);
+}
+/* =========================================================
+   PALETTE OVERRIDE — COQUETTE INSPIRED
+   black stays black
+   old acid green  -> #8478CE
+   old fuchsia     -> #FF9DAA
+   support colors  -> #78CDB0 / #C0E8DD
+========================================================= */
+
+:root {
+    --paper: #f2efe6;
+    --ink: #171717;
+
+    --acid: #8478CE;   /* primary accent */
+    --pink: #FF9DAA;   /* secondary accent */
+
+    --mint: #78CDB0;   /* support accent */
+    --foam: #C0E8DD;   /* soft surface accent */
+
+    --soft-ink: #68665f;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+    background: var(--acid);
+    color: var(--paper);
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body {
+    background-color: #ebe7dc;
+
+    background-image:
+
+        /* subtle horizontal scan */
+        repeating-linear-gradient(
+            0deg,
+            rgba(20, 20, 20, 0.018) 0px,
+            rgba(20, 20, 20, 0.018) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+
+        /* vertical technical grid */
+        linear-gradient(
+            90deg,
+            rgba(20, 20, 20, 0.022) 1px,
+            transparent 1px
+        ),
+
+        /* horizontal technical grid */
+        linear-gradient(
+            rgba(20, 20, 20, 0.022) 1px,
+            transparent 1px
+        ),
+
+        /* pink contamination */
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(255, 157, 170, 0.08),
+            transparent 18%
+        ),
+
+        /* mint contamination */
+        radial-gradient(
+            circle at 88% 74%,
+            rgba(120, 205, 176, 0.08),
+            transparent 18%
+        ),
+
+        /* purple contamination */
+        radial-gradient(
+            circle at 52% 42%,
+            rgba(132, 120, 206, 0.05),
+            transparent 20%
+        );
+
+    background-size:
+        auto,
+        32px 32px,
+        32px 32px,
+        auto,
+        auto,
+        auto;
+}
+
+
+/* =========================================================
+   GENERAL ACCENTS
+========================================================= */
+
+.site-header::after,
+.hero-title::after,
+.section-number,
+.project-section-number,
+.model-section-number,
+.viewer-corner,
+.project-kicker,
+.loop-step:nth-child(odd) > span:first-child {
+    background: var(--acid);
+}
+
+.main-nav a::before,
+.main-nav a::after,
+.section-header::after,
+.hero-note,
+.punk-note,
+.about-section::after,
+.contact-main::after,
+.project-meta-label::before,
+.model-info-label::before,
+.vision-process-index,
+.loop-arrow,
+.gallery-item figcaption::before,
+.model-breakdown-item figcaption::before,
+.project-back::before,
+.project-back::after {
+    color: var(--pink);
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.about-note,
+.project-media-label,
+.comparison-side:last-child .comparison-label,
+.project-error::before {
+    background: var(--foam);
+    color: var(--ink);
+}
+
+.hero-bottom,
+.info-block,
+.vision-process-item,
+.project-meta,
+.model-info-grid,
+.model-viewer-top {
+    background: rgba(192, 232, 221, 0.18);
+}
+
+
+/* =========================================================
+   HEADER / NAV
+========================================================= */
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    border-color: var(--ink);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero::after {
+    background: var(--pink);
+    color: var(--ink);
+}
+
+.hero-title::before {
+    border-color: var(--pink);
+}
+
+.hero-bottom {
+    box-shadow:
+        5px 5px 0 var(--mint);
+}
+
+.hero-tags span:nth-child(2n) {
+    background: var(--foam);
+}
+
+.hero-tags span:nth-child(3n) {
+    background: var(--pink);
+}
+
+.hero-tags span:nth-child(4n) {
+    background: var(--acid);
+    color: var(--paper);
+}
+
+.hero-mark {
+    border-color: var(--mint);
+    color: var(--mint);
+}
+
+
+/* =========================================================
+   SECTION MARKERS
+========================================================= */
+
+.section::after {
+    background: var(--pink);
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+
+/* =========================================================
+   CARDS / GRIDS
+========================================================= */
+
+.work-card:hover::before,
+.work-card:focus-visible::before {
+    border-color: var(--pink);
+    background: rgba(255, 157, 170, 0.06);
+}
+
+.work-card-media {
+    background: #e5e0d4;
+}
+
+.work-card-media::after {
+    color: var(--acid);
+    text-shadow:
+        1px 1px 0 var(--ink);
+}
+
+.work-card:hover .work-card-media,
+.work-card:focus-visible .work-card-media {
+    box-shadow:
+        5px 5px 0 var(--mint);
+}
+
+.work-card-index {
+    background: var(--ink);
+    color: var(--foam);
+}
+
+.work-card-arrow {
+    background: var(--foam);
+    color: var(--ink);
+}
+
+.work-card:nth-child(3n + 1)::after {
+    background: var(--foam);
+}
+
+.work-card:nth-child(3n + 2)::after {
+    background: var(--pink);
+}
+
+
+/* =========================================================
+   ABOUT / CONTACT
+========================================================= */
+
+.info-block h3::before {
+    color: var(--pink);
+}
+
+.about-note {
+    border-color: var(--ink);
+}
+
+.contact-main::after {
+    color: var(--pink);
+}
+
+.rough-button:hover,
+.rough-button:focus-visible {
+    background: var(--foam);
+    color: var(--ink);
+    box-shadow:
+        3px 3px 0 var(--acid);
+}
+
+
+/* =========================================================
+   PROJECT / MODEL HERO
+========================================================= */
+
+.project-stamp,
+.model-stamp {
+    background: var(--pink);
+    color: var(--ink);
+}
+
+.project-title-area h1,
+.model-title-area h1 {
+    text-shadow:
+        2px 1px 0 rgba(255, 157, 170, 0.25);
+}
+
+.project-title-area h1::after,
+.model-title-area h1::after {
+    background: var(--mint);
+}
+
+.project-title-mark,
+.model-title-mark {
+    color: var(--acid);
+}
+
+.project-hero-media {
+    box-shadow:
+        6px 6px 0 rgba(120, 205, 176, 0.85);
+}
+
+.project-media-label {
+    border-color: var(--ink);
+}
+
+
+/* =========================================================
+   META / INFO PANELS
+========================================================= */
+
+.project-focus-title {
+    background: var(--ink);
+    color: var(--foam);
+}
+
+.project-focus {
+    border-top-color: var(--mint);
+    border-bottom-color: var(--mint);
+}
+
+.project-meta-label::before,
+.model-info-label::before {
+    color: var(--pink);
+}
+
+
+/* =========================================================
+   VISION / PROCESS
+========================================================= */
+
+.vision-process {
+    border-top-color: var(--mint);
+}
+
+.vision-process-item:nth-child(2) {
+    background: rgba(132, 120, 206, 0.08);
+}
+
+.vision-process-item:nth-child(3) {
+    background: rgba(120, 205, 176, 0.12);
+}
+
+
+/* =========================================================
+   CORE LOOP
+========================================================= */
+
+.core-loop {
+    border-color: var(--ink);
+    background: rgba(192, 232, 221, 0.12);
+}
+
+
+/* =========================================================
+   BEFORE / AFTER
+========================================================= */
+
+.comparison-side:last-child .comparison-label {
+    background: var(--mint);
+}
+
+.comparison-image {
+    background:
+        linear-gradient(
+            135deg,
+            #dfdbd0,
+            #ebe7dc
+        );
+}
+
+
+/* =========================================================
+   MY WORK TAGS
+========================================================= */
+
+.project-work-list span:nth-child(3n + 1) {
+    background: var(--acid);
+    color: var(--paper);
+}
+
+.project-work-list span:nth-child(4n) {
+    background: var(--pink);
+    color: var(--ink);
+}
+
+.project-work-list span:nth-child(5n + 2) {
+    background: var(--foam);
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   GALLERY / BREAKDOWN
+========================================================= */
+
+.gallery-item figcaption::before,
+.model-breakdown-item figcaption::before {
+    color: var(--pink);
+}
+
+
+/* =========================================================
+   PROJECT LINKS
+========================================================= */
+
+.project-links-section {
+    background: var(--ink);
+}
+
+.project-links-label {
+    color: var(--foam);
+}
+
+.project-big-link:hover {
+    color: var(--mint);
+}
+
+.project-big-link span {
+    color: var(--acid);
+}
+
+
+/* =========================================================
+   MODEL VIEWER
+========================================================= */
+
+.model-viewer-frame {
+    box-shadow:
+        6px 6px 0 var(--mint);
+}
+
+.model-viewer-top span:last-child {
+    color: var(--pink);
+}
+
+.model-credit > span {
+    color: var(--pink);
+}
+
+.viewer-corner {
+    background: var(--acid);
+    color: var(--paper);
+}
+
+
+/* =========================================================
+   404
+========================================================= */
+
+.project-error-mark {
+    color: var(--acid);
+}
+
+
+/* =========================================================
+   DOODLE OVERLAY (if already using it)
+========================================================= */
+
+body::after {
+    filter: contrast(1.08);
+    opacity: 0.045;
+}
+/* =========================================================
+   RESPONSIVE MICRO-TYPOGRAPHY
+   Bigger on desktop, controlled on mobile.
+========================================================= */
+
+:root {
+    --hud-mono:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+
+    /*
+    Tiny interface text:
+    ~10px mobile
+    ~12-13px desktop
+    */
+    --hud-text-xs:
+        clamp(
+            10px,
+            calc(0.35vw + 6px),
+            13px
+        );
+
+    /*
+    Small descriptive HUD text:
+    ~11px mobile
+    ~13-14px desktop
+    */
+    --hud-text-sm:
+        clamp(
+            11px,
+            calc(0.32vw + 7px),
+            14px
+        );
+
+    /*
+    Normal secondary descriptions:
+    ~14px mobile
+    ~16-17px desktop
+    */
+    --hud-text-description:
+        clamp(
+            14px,
+            calc(0.30vw + 10px),
+            17px
+        );
+}
+
+
+/* =========================================================
+   GENERAL HUD MICROTEXT
+========================================================= */
+
+.hero-index,
+.hero-note,
+.section::before,
+.section-number,
+.project-section::before,
+.model-section::before,
+.project-section-number,
+.model-section-number,
+.project-meta-label,
+.model-info-label,
+.project-focus-title,
+.project-stamp,
+.model-stamp,
+.project-kicker,
+.project-links-label,
+.model-viewer-top,
+.model-credit,
+.gallery-item figcaption,
+.model-breakdown-item figcaption,
+.vision-process-heading,
+.vision-process-index,
+.project-back {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1.25;
+}
+
+
+/* =========================================================
+   IMPORTANT SMALL TEXT
+========================================================= */
+
+.work-card-type,
+.punk-note,
+.project-simple-list,
+.vision-process-text p {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-sm);
+
+    line-height:
+        1.4;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTIONS
+========================================================= */
+
+.section-description {
+
+    font-size:
+        var(--hud-text-description);
+
+    line-height:
+        1.4;
+}
+
+
+/* =========================================================
+   MAIN NAV HUD
+========================================================= */
+
+.main-nav a {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        clamp(
+            10px,
+            calc(0.30vw + 6px),
+            12px
+        );
+}
+
+
+/* =========================================================
+   HEADER CENTER LABEL
+========================================================= */
+
+.site-header::before {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        clamp(
+            9px,
+            calc(0.28vw + 5px),
+            11px
+        );
+}
+
+
+/* =========================================================
+   HERO TAGS
+========================================================= */
+
+.hero-tags span {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        clamp(
+            9px,
+            calc(0.30vw + 6px),
+            12px
+        );
+
+    line-height:
+        1.2;
+}
+
+
+/* =========================================================
+   CARD INDEX
+========================================================= */
+
+.work-card-index {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        clamp(
+            9px,
+            calc(0.28vw + 6px),
+            11px
+        );
+}
+
+
+/* =========================================================
+   META VALUES
+========================================================= */
+
+.project-meta-item p,
+.model-info-item p {
+
+    font-size:
+        clamp(
+            15px,
+            calc(0.45vw + 8px),
+            18px
+        );
+
+    line-height:
+        1.35;
+}
+
+
+/* =========================================================
+   BEFORE / AFTER DESCRIPTION + LABELS
+========================================================= */
+
+.comparison-label {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+}
+
+
+.comparison-description p {
+
+    font-size:
+        clamp(
+            14px,
+            calc(0.25vw + 10px),
+            16px
+        );
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================================
+   MY WORK TAGS
+========================================================= */
+
+.project-work-list span {
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+}
+
+
+/* =========================================================
+   DESKTOP — A LITTLE MORE PRESENCE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    /*
+    The descriptive sentence beside section titles
+    needs slightly more visual weight.
+    */
+
+    .section-description {
+
+        color:
+            #54524d;
+
+        font-weight:
+            500;
+    }
+
+
+    /*
+    Pink handwritten/debug notes like:
+    "gameplay first"
+    "same idea / different state"
+    */
+
+    .hero-note,
+    .punk-note {
+
+        font-size:
+            clamp(
+                12px,
+                0.72vw,
+                15px
+            );
+
+        font-weight:
+            700;
+    }
+
+
+    /*
+    DATA / SECTOR etc.
+    Keep technical but actually readable.
+    */
+
+    .section::before,
+    .project-section::before,
+    .model-section::before {
+
+        font-size:
+            clamp(
+                10px,
+                0.60vw,
+                12px
+            );
+
+        font-weight:
+            700;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — HARD CAPS
+
+   These prevent the desktop improvements
+   from becoming oversized on phones.
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .hero-index,
+    .section-number,
+    .project-section-number,
+    .model-section-number,
+    .project-meta-label,
+    .model-info-label,
+    .project-stamp,
+    .model-stamp,
+    .project-kicker,
+    .project-links-label,
+    .project-back,
+    .gallery-item figcaption,
+    .model-breakdown-item figcaption {
+
+        font-size:
+            10px;
+    }
+
+
+    .hero-note,
+    .punk-note,
+    .work-card-type {
+
+        font-size:
+            11px;
+    }
+
+
+    .section-description {
+
+        font-size:
+            14px;
+    }
+
+
+    .main-nav a {
+
+        font-size:
+            9px;
+    }
+
+
+    .project-meta-item p,
+    .model-info-item p {
+
+        font-size:
+            15px;
+    }
+
+}
+/* =========================================================
+   COQUETTE / PROJECT GAMEPLAY SHOWCASE
+========================================================= */
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.gameplay-intro {
+    margin-bottom:
+        clamp(
+            32px,
+            5vw,
+            58px
+        );
+}
+
+
+/* =========================================================
+   MAIN GAMEPLAY FEATURES
+========================================================= */
+
+.gameplay-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        clamp(
+            18px,
+            2.5vw,
+            32px
+        );
+
+    max-width:
+        1200px;
+}
+
+
+.gameplay-feature {
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        rgba(
+            192,
+            232,
+            221,
+            0.12
+        );
+}
+
+
+.gameplay-feature:nth-child(2) {
+    background:
+        rgba(
+            255,
+            157,
+            170,
+            0.08
+        );
+}
+
+
+.gameplay-feature-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 37px;
+
+    margin-bottom:
+        10px;
+
+    padding-bottom:
+        8px;
+
+    border-bottom:
+        1px solid
+        var(--ink);
+}
+
+
+.gameplay-feature-index {
+    flex-shrink: 0;
+
+    padding:
+        4px
+        6px;
+
+    background:
+        var(--acid);
+
+    color:
+        var(--paper);
+
+    border:
+        1px solid
+        var(--ink);
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1;
+}
+
+
+.gameplay-feature:nth-child(2)
+.gameplay-feature-index {
+    background:
+        var(--pink);
+
+    color:
+        var(--ink);
+}
+
+
+.gameplay-feature h3 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            20px,
+            2vw,
+            28px
+        );
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.04em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.gameplay-feature-media {
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        #dfdbd0;
+}
+
+
+.gameplay-media {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    object-fit:
+        cover;
+}
+
+
+.gameplay-feature-text {
+    padding:
+        12px
+        2px
+        2px;
+}
+
+
+.gameplay-feature-text p {
+    max-width:
+        620px;
+
+    margin:
+        0;
+
+    font-size:
+        clamp(
+            14px,
+            calc(0.25vw + 10px),
+            16px
+        );
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================================
+   LOADOUT
+========================================================= */
+
+.gameplay-loadout {
+    max-width:
+        1200px;
+
+    margin-top:
+        clamp(
+            34px,
+            5vw,
+            60px
+        );
+}
+
+
+.gameplay-loadout-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    padding:
+        7px
+        9px;
+
+    background:
+        var(--ink);
+
+    color:
+        var(--paper);
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    letter-spacing:
+        0.06em;
+}
+
+
+.gameplay-loadout-heading
+span:last-child {
+    color:
+        var(--foam);
+}
+
+
+.gameplay-loadout-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    border-left:
+        1px solid
+        var(--ink);
+}
+
+
+.gameplay-loadout-item {
+    position: relative;
+
+    min-height:
+        180px;
+
+    padding:
+        16px;
+
+    border-right:
+        1px solid
+        var(--ink);
+
+    border-bottom:
+        1px solid
+        var(--ink);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+}
+
+
+.gameplay-loadout-item:nth-child(1) {
+    background:
+        rgba(
+            192,
+            232,
+            221,
+            0.18
+        );
+}
+
+
+.gameplay-loadout-item:nth-child(2) {
+    background:
+        rgba(
+            120,
+            205,
+            176,
+            0.13
+        );
+}
+
+
+.gameplay-loadout-item:nth-child(3) {
+    background:
+        rgba(
+            255,
+            157,
+            170,
+            0.13
+        );
+}
+
+
+.gameplay-loadout-item:nth-child(4) {
+    background:
+        rgba(
+            132,
+            120,
+            206,
+            0.13
+        );
+}
+
+
+.gameplay-loadout-index {
+    display: block;
+
+    margin-bottom:
+        28px;
+
+    color:
+        var(--pink);
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+}
+
+
+.gameplay-loadout-item h3 {
+    margin:
+        0
+        0
+        12px;
+
+    font-size:
+        clamp(
+            18px,
+            1.6vw,
+            23px
+        );
+
+    line-height:
+        0.95;
+
+    letter-spacing:
+        -0.04em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.gameplay-loadout-effect {
+    margin:
+        0
+        0
+        16px;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.4;
+}
+
+
+.gameplay-loadout-meta {
+    width:
+        fit-content;
+
+    margin:
+        auto
+        0
+        0;
+
+    padding:
+        4px
+        6px;
+
+    border:
+        1px solid
+        var(--ink);
+
+    background:
+        var(--paper);
+
+    font-family:
+        var(--hud-mono);
+
+    font-size:
+        var(--hud-text-xs);
+
+    line-height:
+        1.25;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .gameplay-loadout-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .gameplay-features {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .gameplay-loadout-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .gameplay-loadout-item {
+        min-height:
+            auto;
+    }
+
+
+    .gameplay-loadout-index {
+        margin-bottom:
+            16px;
+    }
+
+}
+/* =========================================================
+   MY WORK — SEMANTIC COLOR SYSTEM
+========================================================= */
+
+/*
+DESIGN / STRUCTURE
+Game Design
+Level Design
+etc.
+*/
+
+.project-work-list .work-design {
+    background:
+        #8478CE;
+
+    color:
+        #ffffff;
+
+    border-color:
+        var(--ink);
+}
+
+
+/*
+GAMEPLAY / IMPLEMENTATION
+Gameplay Design
+Unity workflow
+systems
+*/
+
+
+/* =========================================================
+   MY WORK — UNIQUE PALETTE TAGS
+   each tag gets a different color
+========================================================= */
+
+/*
+Reset previous repeated category colors for this section.
+*/
+
+.project-work-list span {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+}
+
+
+/* 01 */
+.project-work-list span:nth-child(1) {
+    background: #8478CE;
+    color: #ffffff;
+}
+
+
+/* 02 */
+.project-work-list span:nth-child(2) {
+    background: #C0E8DD;
+    color: var(--ink);
+}
+
+
+/* 03 */
+.project-work-list span:nth-child(3) {
+    background: #78CDB0;
+    color: var(--ink);
+}
+
+
+/* 04 */
+.project-work-list span:nth-child(4) {
+    background: #FF9DAA;
+    color: var(--ink);
+}
+
+
+/* 05 */
+.project-work-list span:nth-child(5) {
+    background: #FFEBEC;
+    color: var(--ink);
+}
+
+
+/* 06 */
+.project-work-list span:nth-child(6) {
+    background: #FFC4CA;
+    color: var(--ink);
+}
+
+
+/* 07 */
+.project-work-list span:nth-child(7) {
+    background: #AA9FFF;
+    color: var(--ink);
+}
+
+
+/* 08 - if you add another item later */
+.project-work-list span:nth-child(8) {
+    background: #7CCEB8;
+    color: var(--ink);
+}

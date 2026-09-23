@@ -3,11 +3,10 @@
 PROJECT DATA
 =========================================================
 
-Qui vengono definiti tutti i progetti reali
-mostrati nel portfolio.
+Tutti i contenuti dei progetti vengono definiti qui.
 
-I testi narrativi di COQUETTE sono volutamente
-ancora vuoti: verranno scritti dall'autrice.
+Il template della pagina viene costruito
+automaticamente da project.js.
 */
 
 
@@ -23,15 +22,14 @@ const PROJECTS = [
 
         title: "COQUETTE",
 
-        type: "Game Design / Gameplay Prototype",
+        type: "Videogame",
 
-        subtitle: "",
+        subtitle:
+            "A cute, saturated and grotesque low-poly bad trip built around cigarette-based combat.",
 
 
         /* =============================================
            HOMEPAGE COVER
-
-           La homepage vuole un'immagine statica.
         ============================================= */
 
         cover:
@@ -40,8 +38,6 @@ const PROJECTS = [
 
         /* =============================================
            HERO
-
-           Video principale della pagina progetto.
         ============================================= */
 
         hero: {
@@ -66,54 +62,253 @@ const PROJECTS = [
            PROJECT INFO
         ============================================= */
 
-        role: [
-            "Game Design",
-            "Gameplay Design",
-            "Unity Implementation"
-        ],
+        role:
+    "Game Designer / Unity Prototyper",
 
-        engine: "Unity",
-
-        year: "",
-
-        duration: "",
-
-        team: "Solo Project",
-
-        status: "Prototype",
-
+        engine:
+            "Unity",
 
         /*
-        Le aree principali verranno definite
-        meglio quando completeremo i testi.
+        L'anno resta vuoto finché non vuoi
+        inserirlo con certezza.
         */
 
-        focus: [],
+        year:
+            "",
+
+        duration:
+            "46 days",
+
+        team:
+            "Solo Project",
+
+        status:
+            "Completed Prototype",
+
+
+        focus: [
+
+            "Weapon / Tool Design",
+
+            "Visual Direction",
+
+            "Solo Prototyping"
+
+        ],
 
 
         /* =============================================
            OVERVIEW
-
-           Verrà scritto da te.
         ============================================= */
 
-        overview: "",
+        overview:
+            `COQUETTE is a short unity solo project, built around a dicotomy between cute and gross. Have you ever seen before a shooter where your weapons are cigarettes? now you have.`,
 
 
         /* =============================================
            VISION
-
-           Verrà scritto da te.
-
-           process sarà una breve sottosezione
-           "From Idea to Playable".
         ============================================= */
 
         vision: {
 
-            text: "",
+            text:
+                `I wanted the game to feel like and edgy fragment of early-2000s internet cuulture: cute, oversaturated and built around serious themes, intentionally using them in questionable ways; with addictions like cigarettes and drugs often being romanticized, COQUETTE wants to use them in a non-serious way.`,
 
-            process: []
+
+            /*
+            Piccola sottosezione.
+            Non è un development diary:
+            sono soltanto tre passaggi concettuali.
+            */
+
+            process: [
+
+                {
+
+                    title:
+                        "The Look",
+
+                    text:
+                        'I wanted to use early-internet imagery and the contrast between cute colors and scary vibes. Look at "Creepy-chan"!, the main ispiration source.'
+
+                },
+
+
+                {
+
+                    title:
+                        "The Gimmick",
+
+                    text:
+                        `The cigarette theme as a weapon became a weapon wheel with four mechanically different effects. After all..."Smoking Kills", right?`
+
+                },
+
+
+                {
+
+                    title:
+                        "The Game",
+
+                    text:
+                        `I built a small but compact level, enemies, checkpoints, collectibles and a final encounter around that badtrip idea. A short but remarkable journey.`
+
+                }
+
+            ]
+
+        },
+
+
+        /* =============================================
+           GAMEPLAY
+
+           Sezione specifica per mostrare le meccaniche
+           senza trasformarle in un feature list.
+        ============================================= */
+
+        gameplay: {
+
+            note:
+                "dont smoke people! //",
+
+
+            intro:
+                `Change your cigarette type to adapt to different situations, when enemies have smoked too much, CUT them off! Try to find all lighters and explore this little situation gooing inside your head.`,
+
+
+            features: [
+
+                {
+
+                    title:
+                        "Cigarette Wheel",
+
+                    media: {
+
+                        type:
+                            "video",
+
+                        src:
+                            "assets/projects/coquette/weapon-wheel.mp4",
+
+                        autoplay:
+                            true,
+
+                        loop:
+                            true,
+
+                        muted:
+                            true,
+
+                        controls:
+                            false
+
+                    },
+
+                    text:
+                        `The four cigarette types use different attack effects, area sizes and crowd-control behaviour.`
+
+                },
+
+
+                {
+
+                    title:
+                        "Knife / Smoke Enemies",
+
+                    media: {
+
+                        type:
+                            "video",
+
+                        src:
+                            "assets/projects/coquette/knife.mp4",
+
+                        autoplay:
+                            true,
+
+                        loop:
+                            true,
+
+                        muted:
+                            true,
+
+                        controls:
+                            false
+
+                    },
+
+                    text:
+                        `Enemies made of smoke are immune to cigarette attacks and can only be killed with the knife, cut away their bad breath.`
+
+                }
+
+            ],
+
+
+            /* -----------------------------------------
+               CIGARETTE ROLES
+            ----------------------------------------- */
+
+            loadout: [
+
+                {
+
+                    name:
+                        "Marlboro",
+
+                    effect:
+                        "Direct single-target hit",
+
+                    meta:
+                        "Unlimited"
+
+                },
+
+
+                {
+
+                    name:
+                        "Chesterfield",
+
+                    effect:
+                        "Piercing line of smoke",
+
+                    meta:
+                        "Limited uses"
+
+                },
+
+
+                {
+
+                    name:
+                        "Pink Black Devil",
+
+                    effect:
+                        "Large no dmg smoke area + immobilize",
+
+                    meta:
+                        "Limited uses + feedback"
+
+                },
+
+
+                {
+
+                    name:
+                        "Black Black Devil",
+
+                    effect:
+                        "Large lethal smoke area ",
+
+                    meta:
+                        "Limited uses"
+
+                }
+
+            ]
 
         },
 
@@ -121,8 +316,8 @@ const PROJECTS = [
         /* =============================================
            CORE LOOP
 
-           Decideremo se tenerlo dopo aver visto
-           la pagina completa.
+           Per COQUETTE non è necessario:
+           la sezione Gameplay comunica già abbastanza.
         ============================================= */
 
         coreLoop: [],
@@ -141,7 +336,8 @@ const PROJECTS = [
 
                 media: {
 
-                    type: "image",
+                    type:
+                        "image",
 
                     src:
                         "assets/projects/coquette/early.png",
@@ -151,7 +347,8 @@ const PROJECTS = [
 
                 },
 
-                description: ""
+                description:
+                    `One of the only surviving image from the early development stage: a photo of the Unity scene with basic geometry, placeholder presentation and an early version of the character.`
 
             },
 
@@ -163,17 +360,19 @@ const PROJECTS = [
 
                 media: {
 
-                    type: "image",
+                    type:
+                        "image",
 
                     src:
                         "assets/projects/coquette/level-view.png",
 
                     alt:
-                        "COQUETTE final prototype environment."
+                        "Final COQUETTE prototype environment."
 
                 },
 
-                description: ""
+                description:
+                    `The final prototype combines the saturated environment, custom UI, gameplay systems, props and the finished visual language inside one compact level.`
 
             }
 
@@ -184,109 +383,116 @@ const PROJECTS = [
            MY WORK
         ============================================= */
 
-        myWork: [
+       myWork: [
 
+    {
+        label:
             "Game Design",
 
+        category:
+            "design"
+    },
+
+
+    {
+        label:
             "Gameplay Design",
 
-            "Unity Implementation",
+        category:
+            "gameplay"
+    },
 
+
+    {
+        label:
+            "Unity Workflow",
+
+        category:
+            "gameplay"
+    },
+
+
+    {
+        label:
             "Level / Scene Design",
 
+        category:
+            "design"
+    },
+
+
+    {
+        label:
             "UI Design",
 
-            "Low-poly 3D"
+        category:
+            "visual"
+    },
 
-        ],
+
+    {
+        label:
+            "Art Direction",
+
+        category:
+            "visual"
+    },
+
+
+    {
+        label:
+            "Low-poly 3D",
+
+        category:
+            "asset"
+    }
+
+],
 
 
         /* =============================================
            GALLERY
 
-           Per ora soltanto materiale già pronto.
-
-           Il menu verrà aggiunto dopo aver convertito
-           la GIF in un formato più leggero.
+           Weapon Wheel e Knife NON sono più qui:
+           sono diventati contenuti della sezione Gameplay.
         ============================================= */
 
         gallery: [
 
-             {
+            {
 
-        type: "image",
+                type:
+                    "image",
 
-        src:
-            "assets/projects/coquette/menu.png",
+                src:
+                    "assets/projects/coquette/menu.png",
 
-        alt:
-            "COQUETTE main menu and UI design.",
+                alt:
+                    "COQUETTE main menu and UI.",
 
-        caption:
-            "Main Menu / UI"
+                caption:
+                    "Main Menu / UI — designed manually in Canva"
 
-    },
-
-    {
-
-        type: "video",
-
-        src:
-            "assets/projects/coquette/weapon-wheel.mp4",
-
-        autoplay: true,
-
-        loop: true,
-
-        muted: true,
-
-        controls: false,
-
-        caption:
-            "Weapon Wheel"
-
-    },
+            },
 
 
-    {
+            {
 
-        type: "video",
+                type:
+                    "image",
 
-        src:
-            "assets/projects/coquette/knife.mp4",
+                src:
+                    "assets/projects/coquette/final-encounter.png",
 
-        autoplay: true,
+                alt:
+                    "Final encounter in COQUETTE.",
 
-        loop: true,
+                caption:
+                    "Final Encounter — fight your(many)self clones"
 
-        muted: true,
+            }
 
-        controls: false,
-
-        caption:
-            "Knife"
-
-    },
-
-
-
-
-    {
-
-        type: "image",
-
-        src:
-            "assets/projects/coquette/final-encounter.png",
-
-        alt:
-            "Final encounter in COQUETTE.",
-
-        caption:
-            "Final Encounter"
-
-    }
-
-],
+        ],
 
 
         /* =============================================
