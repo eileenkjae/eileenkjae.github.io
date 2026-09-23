@@ -917,12 +917,6 @@ function createDrawingSystemSection(
         &&
         drawingSystem.code.lines.length > 0
     ) {
-
-        const highlightedLines =
-            Array.isArray(drawingSystem.code.highlightLines)
-                ? drawingSystem.code.highlightLines
-                : [];
-
         const linesHTML =
             drawingSystem.code.lines
                 .map(
@@ -930,13 +924,8 @@ function createDrawingSystemSection(
 
                         const lineNumber = index + 1;
 
-                        const highlighted =
-                            highlightedLines.includes(lineNumber)
-                                ? " is-highlighted"
-                                : "";
-
                         return `
-                            <div class="code-line${highlighted}">
+                            <div class="code-line">
 
                                 <span class="code-line-number">
                                     ${String(lineNumber).padStart(2, "0")}
@@ -1444,28 +1433,46 @@ function createGallerySection(
 
                     ${gallery
                         .map(
-                            item => `
-                                <figure class="gallery-item">
+                            item => {
 
-                                    ${createMedia(
-                                        item,
-                                        "gallery-media"
-                                    )}
+                                const mediaClasses = [
+                                    "gallery-media",
 
-                                    ${
-                                        item.caption
-                                            ? `
-                                                <figcaption>
-                                                    ${escapeHTML(
-                                                        item.caption
-                                                    )}
-                                                </figcaption>
-                                            `
-                                            : ""
-                                    }
+                                    item.fit === "contain"
+                                        ? "gallery-media--contain"
+                                        : "",
 
-                                </figure>
-                            `
+                                    item.naturalSize === true
+                                        ? "gallery-media--natural"
+                                        : ""
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ");
+
+
+                                return `
+                                    <figure class="gallery-item">
+
+                                        ${createMedia(
+                                            item,
+                                            mediaClasses
+                                        )}
+
+                                        ${
+                                            item.caption
+                                                ? `
+                                                    <figcaption>
+                                                        ${escapeHTML(
+                                                            item.caption
+                                                        )}
+                                                    </figcaption>
+                                                `
+                                                : ""
+                                        }
+
+                                    </figure>
+                                `;
+                            }
                         )
                         .join("")
                     }

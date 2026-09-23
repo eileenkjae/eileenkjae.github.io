@@ -6348,34 +6348,27 @@ Reset previous repeated category colors for this section.
     font-weight: 900;
 }
 
-
 .drawing-code-body {
-    overflow-x: auto;
-    padding: 10px 0 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--acid) var(--ink);
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 0;
 }
 
 
 .code-line {
     display: grid;
-    grid-template-columns: 44px minmax(max-content, 1fr);
-    min-height: 24px;
-    padding-right: 16px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    width: 100%;
+    min-width: 0;
     color: #f2efe6;
     font-family: var(--hud-mono);
-    font-size: clamp(11px, 0.72vw, 13px);
-    line-height: 1.55;
-}
-
-
-.code-line.is-highlighted {
-    background: rgba(132, 120, 206, 0.22);
+    font-size: clamp(10px, 0.66vw, 12px);
+    line-height: 1.5;
 }
 
 
 .code-line-number {
-    padding: 1px 10px 1px 0;
+    padding: 1px 7px 1px 0;
     border-right: 1px solid rgba(242, 239, 230, 0.16);
     color: var(--pink);
     text-align: right;
@@ -6385,11 +6378,13 @@ Reset previous repeated category colors for this section.
 
 .code-line code {
     display: block;
-    min-width: max-content;
-    padding-left: 14px;
+    min-width: 0;
+    padding: 1px 10px;
     color: inherit;
     font: inherit;
-    white-space: pre;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 
@@ -6503,8 +6498,125 @@ Reset previous repeated category colors for this section.
         grid-row: 1;
     }
 
-    .code-line {
-        grid-template-columns: 36px minmax(max-content, 1fr);
-        font-size: 11px;
+   .code-line {
+    grid-template-columns:
+        30px minmax(0, 1fr);
+
+    font-size:
+        10px;
+}
+/* =========================================================
+   PROJECT GALLERY — MEDIA FIT MODES
+========================================================= */
+
+
+/*
+Default gallery media still use the existing
+16 / 10 crop.
+
+Use:
+
+fit: "contain"
+
+inside projects.js when an artwork or UI element
+must remain completely visible.
+*/
+
+.project-gallery .gallery-media--contain {
+
+    object-fit:
+        contain;
+
+    background:
+        var(--paper);
+}
+
+
+/*
+naturalSize: true
+
+Used for portrait artwork, sketches and animated
+images that should preserve their original ratio
+instead of being forced into the standard 16 / 10 frame.
+*/
+
+.project-gallery .gallery-media--natural {
+
+    width:
+        auto;
+
+    max-width:
+        100%;
+
+    height:
+        auto;
+
+    max-height:
+        760px;
+
+    aspect-ratio:
+        auto;
+
+    object-fit:
+        contain;
+
+    display:
+        block;
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+    background:
+        var(--paper);
+}
+
+
+/*
+Keeps the two-column gallery aligned from the top
+when portrait and landscape media are mixed.
+*/
+
+.project-gallery {
+
+    align-items:
+        start;
+}
+
+
+/*
+Portrait artwork gets a little breathing room
+instead of touching the edge of its gallery cell.
+*/
+
+.project-gallery .gallery-media--natural {
+
+    padding:
+        10px;
+
+    box-sizing:
+        border-box;
+}
+
+
+/* =========================================================
+   PROJECT GALLERY — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .project-gallery .gallery-media--natural {
+
+        width:
+            100%;
+
+        max-height:
+            none;
+
+        padding:
+            6px;
     }
+
 }
