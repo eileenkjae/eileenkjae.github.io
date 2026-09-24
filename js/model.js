@@ -57,7 +57,7 @@ function escapeHTML(value) {
 
 
 /* =========================================================
-   TEXT → PARAGRAPHS
+   TEXT - PARAGRAPHS
 ========================================================= */
 
 function createParagraphs(text) {
@@ -600,7 +600,7 @@ function buildModelPage() {
                         </h2>
 
                         <span class="punk-note">
-                            model notes →
+                            model notes -
                         </span>
 
                     </header>

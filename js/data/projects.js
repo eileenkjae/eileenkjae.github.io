@@ -90,7 +90,7 @@ const PROJECTS = [
         ========================================================= */
 
         overview:
-            `B-Rush is a three-person third-person action roguelike prototype developed during a fixed two-month application deadline. It began as material to support a collaborator's Fine Arts Academy application; the project was included in her portfolio, and she was admitted with a score of 86/100.
+            `B-Rush is a three-person third-person action roguelike prototype developed during a fixed two-month application deadline. It began as material to support a collaborator's Fine Arts Academy application; the project was included in her portfolio, and she was successfully admitted.'
 
 I led the game design, gameplay direction and Unity production: defining systems, guiding scope and design choices, organizing the pipeline and documentation, managing the GitHub repository, integrating shaders, materials and URP renderer changes, and creating part of the 3D content. One collaborator focused mainly on narrative, worldbuilding and 3D modeling; another worked on illustration and selected textures.
 
@@ -150,7 +150,7 @@ The original concept was much larger than the first milestone could support, so 
         gameplay: {
 
             note:
-                "fight → earn ink → decide when to spend it //",
+                "fight - earn ink - draw //",
 
             intro:
                 `B-Rush ties its main combat decisions to one resource. Staying active in melee helps refill ink, while charged attacks and drawn sigils ask the player to spend it for stronger or more situational outcomes.`,

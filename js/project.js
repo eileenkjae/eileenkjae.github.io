@@ -604,7 +604,7 @@ function createDrawingSystemSection(
                                                 class="drawing-flow-arrow"
                                                 aria-hidden="true"
                                             >
-                                                →
+                                                -
                                             </span>
                                         `
                                         : ""
@@ -802,7 +802,7 @@ function createCoreLoopSection(number, items) {
                                     class="loop-arrow"
                                     aria-hidden="true"
                                 >
-                                    →
+                                    -
                                 </span>
                             `
                             : "";
