@@ -22,7 +22,7 @@ const PROJECTS = [
 
         title: "B-RUSH",
 
-        type: "Action Roguelike Prototype",
+        type: "videogame (work in progress)",
 
         subtitle:
             "A third-person action roguelike prototype where melee combat generates the ink used for charged attacks and hand-drawn sigils.",

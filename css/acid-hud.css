@@ -102,7 +102,7 @@ body::before {
 .site-header::before {
 
     content:
-        "HUD / PORTFOLIO";
+        "";
 
     position: absolute;
 
@@ -296,7 +296,7 @@ body::before {
 .hero::after {
 
     content:
-        "PLAYER_01 / DESIGN MODE";
+        "MY JOURNEY SO FAR";
 
     top:
         18px;

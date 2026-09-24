@@ -239,9 +239,9 @@ The character was built as a low-poly game asset and designed around the stylize
     ===================================================== */
 
     {
-        id: "accendino",
+        id: "ligher",
 
-        title: "Accendino",
+        title: "lighter",
 
         type: "Low-poly Prop",
 
@@ -333,9 +333,9 @@ The prop was produced as one of the original 3D assets used to support the game'
     ===================================================== */
 
     {
-        id: "spazzatura",
+        id: "Trash Set",
 
-        title: "Spazzatura",
+        title: "Trash Set",
 
         type: "Low-poly Prop Set",
 
@@ -428,9 +428,9 @@ The set combines multiple street and trash-related assets designed to work toget
     ===================================================== */
 
     {
-        id: "chiosco",
+        id: "sicilian kiosk ",
 
-        title: "Chiosco",
+        title: "Sicilian Kiosk",
 
         type: "Low-poly Environment Prop",
 
@@ -520,7 +520,7 @@ The set combines multiple street and trash-related assets designed to work toget
     {
         id: "bracciorobot",
 
-        title: "Braccio Robot",
+        title: "robot arm",
 
         type: "Rigging Exercise",
 
