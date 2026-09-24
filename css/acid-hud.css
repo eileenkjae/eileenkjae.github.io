@@ -1,7 +1,5 @@
 /* =========================================================
    ACID HUD THEME
-   Soft punk / collage / game-interface layer
-   Loaded AFTER style.css
 ========================================================= */
 
 :root {
@@ -296,7 +294,7 @@ body::before {
 .hero::after {
 
     content:
-        "MY JOURNEY SO FAR";
+        "PLAYER_01 / DESIGN MODE";
 
     top:
         18px;
@@ -2266,13 +2264,12 @@ body::before {
 
 }
 /* =========================================================
-   ACID HUD — DESKTOP DENSITY + BACKGROUND V2
+   ACID HUD — DESKTOP DENSITY + BACKGROUND
 ========================================================= */
 
 
 /* =========================================================
    BACKGROUND
-   Xerox paper + faint technical grid + monitor scan
 ========================================================= */
 
 body {
@@ -2282,7 +2279,7 @@ body {
 
     background-image:
 
-        /* subtle horizontal scan */
+
         repeating-linear-gradient(
             0deg,
             rgba(20, 20, 20, 0.018) 0px,
@@ -2291,27 +2288,27 @@ body {
             transparent 4px
         ),
 
-        /* vertical technical grid */
+
         linear-gradient(
             90deg,
             rgba(20, 20, 20, 0.022) 1px,
             transparent 1px
         ),
 
-        /* horizontal technical grid */
+
         linear-gradient(
             rgba(20, 20, 20, 0.022) 1px,
             transparent 1px
         ),
 
-        /* acid contamination */
+
         radial-gradient(
             circle at 7% 23%,
             rgba(202, 255, 53, 0.055),
             transparent 17%
         ),
 
-        /* pink contamination */
+
         radial-gradient(
             circle at 91% 72%,
             rgba(255, 106, 169, 0.045),
@@ -2327,11 +2324,6 @@ body {
 }
 
 
-/*
-The existing noise stays,
-but much softer.
-*/
-
 body::before {
 
     opacity:
@@ -2344,17 +2336,14 @@ body::before {
 
 /* =========================================================
    LARGE DESKTOP
-
-   On large monitors we increase CONTENT density
-   instead of scaling the interface indefinitely.
 ========================================================= */
 
 @media (min-width: 1100px) {
 
 
-    /* =====================================================
+    /* =========================================================
        HERO
-    ===================================================== */
+    ========================================================= */
 
     .hero {
 
@@ -2435,10 +2424,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        NORMAL SECTIONS
-    ===================================================== */
+    ========================================================= */
 
     .section {
 
@@ -2449,11 +2437,6 @@ body::before {
             52px;
     }
 
-
-    /*
-    Section title behaves more like a HUD header
-    than a huge poster.
-    */
 
     .section-header {
 
@@ -2471,10 +2454,6 @@ body::before {
             start;
     }
 
-
-    /*
-    Title and description share the same horizontal area.
-    */
 
     .section-header > div:last-child {
 
@@ -2536,10 +2515,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        PROJECT GRID
-    ===================================================== */
+    ========================================================= */
 
     .projects-section .work-grid,
     .model-grid {
@@ -2571,10 +2549,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        ABOUT
-    ===================================================== */
+    ========================================================= */
 
     .about-big {
 
@@ -2587,10 +2564,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        CONTACT
-    ===================================================== */
+    ========================================================= */
 
     .contact-section {
 
@@ -2613,13 +2589,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        PROJECT DETAIL
-
-       Same philosophy:
-       content > giant section title.
-    ===================================================== */
+    ========================================================= */
 
     .project-hero,
     .model-hero {
@@ -2703,10 +2675,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        BEFORE / AFTER
-    ===================================================== */
+    ========================================================= */
 
     .comparison-description p {
 
@@ -2715,10 +2686,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        GALLERY
-    ===================================================== */
+    ========================================================= */
 
     .project-gallery {
 
@@ -2727,10 +2697,9 @@ body::before {
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        PROJECT LINKS
-    ===================================================== */
+    ========================================================= */
 
     .project-links-section {
 
@@ -2757,9 +2726,6 @@ body::before {
 
 /* =========================================================
    EXTRA-WIDE DESKTOP
-
-   Prevent the interface from becoming billboard-sized
-   on 1600–2000px monitors.
 ========================================================= */
 
 @media (min-width: 1600px) {
@@ -2827,13 +2793,9 @@ body::before {
 
 
 /* =========================================================
-   SMALL PUNK / COLLAGE ACCENTS
+   COLLAGE ACCENTS
 ========================================================= */
 
-
-/*
-Tiny registration mark on section boundaries.
-*/
 
 .section {
 
@@ -2892,10 +2854,6 @@ Tiny registration mark on section boundaries.
 }
 
 
-/*
-Small cut-paper strip beside some cards.
-*/
-
 .work-card:nth-child(3n + 1)::after {
 
     content:
@@ -2933,11 +2891,6 @@ Small cut-paper strip beside some cards.
         none;
 }
 
-
-/*
-Occasional pink corner instead of making
-every element punk at once.
-*/
 
 .work-card:nth-child(3n + 2)::after {
 
@@ -2978,7 +2931,7 @@ every element punk at once.
 
 
 /* =========================================================
-   MOBILE CLEANUP FOR COLLAGE ACCENTS
+   MOBILE COLLAGE ACCENTS
 ========================================================= */
 
 @media (max-width: 650px) {
@@ -2998,13 +2951,12 @@ every element punk at once.
 
 }
 /* =========================================================
-   ACID HUD — DETAIL PAGES V3
-   Project / Model / 404
+   ACID HUD — DETAIL PAGES
 ========================================================= */
 
 
 /* =========================================================
-   SHARED DETAIL PAGE LANGUAGE
+   DETAIL PAGE
 ========================================================= */
 
 .project-hero,
@@ -3028,10 +2980,6 @@ every element punk at once.
         var(--ink);
 }
 
-
-/*
-Tiny technical marks.
-*/
 
 .project-hero::before,
 .model-hero::before {
@@ -3059,7 +3007,6 @@ Tiny technical marks.
     color:
         var(--soft-ink);
 }
-
 
 
 /* =========================================================
@@ -3129,7 +3076,7 @@ Tiny technical marks.
 
     content:
         "[";
-    
+
     margin-right:
         4px;
 
@@ -3191,7 +3138,6 @@ Tiny technical marks.
     transform:
         rotate(0.8deg);
 }
-
 
 
 /* =========================================================
@@ -3370,7 +3316,6 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
    PROJECT HERO MEDIA
 ========================================================= */
@@ -3457,9 +3402,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   PROJECT META — ACTUAL HUD
+   PROJECT META
 ========================================================= */
 
 .project-meta,
@@ -3591,9 +3535,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   PROJECT FOCUS STRIP
+   PROJECT FOCUS
 ========================================================= */
 
 .project-focus {
@@ -3644,7 +3587,6 @@ Tiny technical marks.
     font-size:
         12px;
 }
-
 
 
 /* =========================================================
@@ -3852,7 +3794,6 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
    VISION / PROCESS
 ========================================================= */
@@ -3964,7 +3905,6 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
    CORE LOOP
 ========================================================= */
@@ -4030,7 +3970,6 @@ Tiny technical marks.
     font-size:
         19px;
 }
-
 
 
 /* =========================================================
@@ -4104,7 +4043,6 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
    MY WORK
 ========================================================= */
@@ -4135,7 +4073,6 @@ Tiny technical marks.
     letter-spacing:
         0.04em;
 }
-
 
 
 /* =========================================================
@@ -4196,9 +4133,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   PROJECT LINKS — GAME HUD EXIT PANEL
+   PROJECT LINKS
 ========================================================= */
 
 .project-links-section {
@@ -4263,9 +4199,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   MODEL VIEWER PAGE
+   MODEL VIEWER
 ========================================================= */
 
 .model-viewer-frame {
@@ -4358,9 +4293,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   404 — SYSTEM ERROR SCREEN
+   404
 ========================================================= */
 
 .project-error {
@@ -4481,9 +4415,8 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
-   LARGE DESKTOP — EVEN DENSER DETAILS
+   LARGE DESKTOP
 ========================================================= */
 
 @media (min-width: 1500px) {
@@ -4545,7 +4478,6 @@ Tiny technical marks.
 }
 
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -4596,7 +4528,6 @@ Tiny technical marks.
     }
 
 }
-
 
 
 /* =========================================================
@@ -4729,7 +4660,7 @@ Tiny technical marks.
 
 }
 /* =========================================================
-   BACKGROUND DOODLE COLLAGE
+   BACKGROUND DOODLES
 ========================================================= */
 
 body {
@@ -4737,13 +4668,6 @@ body {
     isolation: isolate;
 }
 
-
-/*
-Doodle layer.
-
-Molto leggero: deve sembrare parte della carta,
-non un'immagine messa dietro al sito.
-*/
 
 body::after {
     content: "";
@@ -4774,22 +4698,18 @@ body::after {
         contrast(1.1);
 }
 /* =========================================================
-   PALETTE OVERRIDE — COQUETTE INSPIRED
-   black stays black
-   old acid green  -> #8478CE
-   old fuchsia     -> #FF9DAA
-   support colors  -> #78CDB0 / #C0E8DD
+   PALETTE
 ========================================================= */
 
 :root {
     --paper: #f2efe6;
     --ink: #171717;
 
-    --acid: #8478CE;   /* primary accent */
-    --pink: #FF9DAA;   /* secondary accent */
+    --acid: #8478CE;
+    --pink: #FF9DAA;
 
-    --mint: #78CDB0;   /* support accent */
-    --foam: #C0E8DD;   /* soft surface accent */
+    --mint: #78CDB0;
+    --foam: #C0E8DD;
 
     --soft-ink: #68665f;
 }
@@ -4814,7 +4734,7 @@ body {
 
     background-image:
 
-        /* subtle horizontal scan */
+
         repeating-linear-gradient(
             0deg,
             rgba(20, 20, 20, 0.018) 0px,
@@ -4823,34 +4743,34 @@ body {
             transparent 4px
         ),
 
-        /* vertical technical grid */
+
         linear-gradient(
             90deg,
             rgba(20, 20, 20, 0.022) 1px,
             transparent 1px
         ),
 
-        /* horizontal technical grid */
+
         linear-gradient(
             rgba(20, 20, 20, 0.022) 1px,
             transparent 1px
         ),
 
-        /* pink contamination */
+
         radial-gradient(
             circle at 8% 18%,
             rgba(255, 157, 170, 0.08),
             transparent 18%
         ),
 
-        /* mint contamination */
+
         radial-gradient(
             circle at 88% 74%,
             rgba(120, 205, 176, 0.08),
             transparent 18%
         ),
 
-        /* purple contamination */
+
         radial-gradient(
             circle at 52% 42%,
             rgba(132, 120, 206, 0.05),
@@ -5233,7 +5153,7 @@ body {
 
 
 /* =========================================================
-   DOODLE OVERLAY (if already using it)
+   DOODLE OVERLAY
 ========================================================= */
 
 body::after {
@@ -5241,8 +5161,7 @@ body::after {
     opacity: 0.045;
 }
 /* =========================================================
-   RESPONSIVE MICRO-TYPOGRAPHY
-   Bigger on desktop, controlled on mobile.
+   RESPONSIVE TYPOGRAPHY
 ========================================================= */
 
 :root {
@@ -5256,11 +5175,7 @@ body::after {
         "Courier New",
         monospace;
 
-    /*
-    Tiny interface text:
-    ~10px mobile
-    ~12-13px desktop
-    */
+
     --hud-text-xs:
         clamp(
             10px,
@@ -5268,11 +5183,7 @@ body::after {
             13px
         );
 
-    /*
-    Small descriptive HUD text:
-    ~11px mobile
-    ~13-14px desktop
-    */
+
     --hud-text-sm:
         clamp(
             11px,
@@ -5280,11 +5191,7 @@ body::after {
             14px
         );
 
-    /*
-    Normal secondary descriptions:
-    ~14px mobile
-    ~16-17px desktop
-    */
+
     --hud-text-description:
         clamp(
             14px,
@@ -5295,7 +5202,7 @@ body::after {
 
 
 /* =========================================================
-   GENERAL HUD MICROTEXT
+   HUD MICROTEXT
 ========================================================= */
 
 .hero-index,
@@ -5333,7 +5240,7 @@ body::after {
 
 
 /* =========================================================
-   IMPORTANT SMALL TEXT
+   SMALL TEXT
 ========================================================= */
 
 .work-card-type,
@@ -5367,7 +5274,7 @@ body::after {
 
 
 /* =========================================================
-   MAIN NAV HUD
+   MAIN NAV
 ========================================================= */
 
 .main-nav a {
@@ -5385,7 +5292,7 @@ body::after {
 
 
 /* =========================================================
-   HEADER CENTER LABEL
+   HEADER LABEL
 ========================================================= */
 
 .site-header::before {
@@ -5461,7 +5368,7 @@ body::after {
 
 
 /* =========================================================
-   BEFORE / AFTER DESCRIPTION + LABELS
+   BEFORE / AFTER LABELS
 ========================================================= */
 
 .comparison-label {
@@ -5503,15 +5410,11 @@ body::after {
 
 
 /* =========================================================
-   DESKTOP — A LITTLE MORE PRESENCE
+   DESKTOP TYPOGRAPHY
 ========================================================= */
 
 @media (min-width: 1200px) {
 
-    /*
-    The descriptive sentence beside section titles
-    needs slightly more visual weight.
-    */
 
     .section-description {
 
@@ -5522,12 +5425,6 @@ body::after {
             500;
     }
 
-
-    /*
-    Pink handwritten/debug notes like:
-    "gameplay first"
-    "same idea / different state"
-    */
 
     .hero-note,
     .punk-note {
@@ -5543,11 +5440,6 @@ body::after {
             700;
     }
 
-
-    /*
-    DATA / SECTOR etc.
-    Keep technical but actually readable.
-    */
 
     .section::before,
     .project-section::before,
@@ -5568,10 +5460,7 @@ body::after {
 
 
 /* =========================================================
-   MOBILE — HARD CAPS
-
-   These prevent the desktop improvements
-   from becoming oversized on phones.
+   MOBILE TYPOGRAPHY
 ========================================================= */
 
 @media (max-width: 650px) {
@@ -5627,7 +5516,7 @@ body::after {
 
 }
 /* =========================================================
-   COQUETTE / PROJECT GAMEPLAY SHOWCASE
+   COQUETTE GAMEPLAY
 ========================================================= */
 
 
@@ -6112,15 +6001,9 @@ span:last-child {
 
 }
 /* =========================================================
-   MY WORK — SEMANTIC COLOR SYSTEM
+   MY WORK COLORS
 ========================================================= */
 
-/*
-DESIGN / STRUCTURE
-Game Design
-Level Design
-etc.
-*/
 
 .project-work-list .work-design {
     background:
@@ -6134,22 +6017,10 @@ etc.
 }
 
 
-/*
-GAMEPLAY / IMPLEMENTATION
-Gameplay Design
-Unity workflow
-systems
-*/
-
-
 /* =========================================================
-   MY WORK — UNIQUE PALETTE TAGS
-   each tag gets a different color
+   MY WORK TAG COLORS
 ========================================================= */
 
-/*
-Reset previous repeated category colors for this section.
-*/
 
 .project-work-list span {
     border: 1px solid var(--ink);
@@ -6157,56 +6028,48 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* 01 */
 .project-work-list span:nth-child(1) {
     background: #8478CE;
     color: #ffffff;
 }
 
 
-/* 02 */
 .project-work-list span:nth-child(2) {
     background: #C0E8DD;
     color: var(--ink);
 }
 
 
-/* 03 */
 .project-work-list span:nth-child(3) {
     background: #78CDB0;
     color: var(--ink);
 }
 
 
-/* 04 */
 .project-work-list span:nth-child(4) {
     background: #FF9DAA;
     color: var(--ink);
 }
 
 
-/* 05 */
 .project-work-list span:nth-child(5) {
     background: #FFEBEC;
     color: var(--ink);
 }
 
 
-/* 06 */
 .project-work-list span:nth-child(6) {
     background: #FFC4CA;
     color: var(--ink);
 }
 
 
-/* 07 */
 .project-work-list span:nth-child(7) {
     background: #AA9FFF;
     color: var(--ink);
 }
 
 
-/* 08 - if you add another item later */
 .project-work-list span:nth-child(8) {
     background: #7CCEB8;
     color: var(--ink);
@@ -6214,10 +6077,7 @@ Reset previous repeated category colors for this section.
 
 
 /* =========================================================
-   B-RUSH / OPTIONAL DRAWING SYSTEM
-
-   Generic enough to be reused by a future project, but it
-   renders only when project.js receives drawingSystem data.
+   B-RUSH DRAWING SYSTEM
 ========================================================= */
 
 .drawing-system-intro {
@@ -6508,16 +6368,10 @@ Reset previous repeated category colors for this section.
         font-size: 11px;
     }
 }
-/* =========================================================
-   css/acid-hud.css
-
-   INCOLLA QUESTO BLOCCO ALLA FINE DEL FILE.
-   DEVE RIMANERE DOPO TUTTI GLI ALTRI STILI.
-========================================================= */
 
 
 /* =========================================================
-   FINAL GALLERY
+   GALLERY
 ========================================================= */
 
 .project-gallery {
@@ -6585,9 +6439,9 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    LARGE GAMEPLAY / ENVIRONMENT IMAGE
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--wide {
@@ -6615,12 +6469,9 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    CHARACTER ART
-
-   Keeps the entire illustration visible instead of
-   cropping heads / legs / character sheets.
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--portrait
@@ -6640,9 +6491,9 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* ---------------------------------------------------------
-   HUD / ART THAT MUST NOT BE CROPPED
---------------------------------------------------------- */
+/* =========================================================
+   HUD / ART
+========================================================= */
 
 .project-gallery
 .gallery-item--contain
@@ -6662,12 +6513,9 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    GIF
-
-   GIF files are rendered through the same IMG element,
-   so animation remains native in the browser.
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--gif
@@ -6678,9 +6526,9 @@ Reset previous repeated category colors for this section.
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    CAPTIONS
---------------------------------------------------------- */
+========================================================= */
 
 .gallery-item figcaption {
 
@@ -6716,7 +6564,6 @@ Reset previous repeated category colors for this section.
 
 /* =========================================================
    POINT CLOUD RECOGNIZER
-   FULL WIDTH / NO HORIZONTAL SCROLL
 ========================================================= */
 
 .drawing-system-main {
@@ -6856,9 +6703,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    NO SCROLLBAR
---------------------------------------------------------- */
+========================================================= */
 
 .drawing-code-body {
 
@@ -6878,9 +6725,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    CODE LINES
---------------------------------------------------------- */
+========================================================= */
 
 .code-line {
 
@@ -6921,8 +6768,6 @@ span:last-child {
         1.55;
 }
 
-
-/* no differently coloured code rows */
 
 .code-line.is-highlighted {
 
@@ -6990,9 +6835,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
-   DESIGN NOTES NOW SIT UNDER THE CODE
---------------------------------------------------------- */
+/* =========================================================
+   DESIGN NOTES
+========================================================= */
 
 .drawing-design-notes {
 
@@ -7140,7 +6985,7 @@ span:last-child {
 
 }
 /* =========================================================
-   FINAL FIX — CODE ALIGNMENT
+   CODE ALIGNMENT
 ========================================================= */
 
 .drawing-system-main {
@@ -7350,7 +7195,7 @@ span:last-child {
 
 
 /* =========================================================
-   FINAL FIX — GALLERY
+   GALLERY
 ========================================================= */
 
 .project-gallery {
@@ -7393,12 +7238,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    UNIFORM MEDIA FRAME
-
-   Tutte le immagini occupano uno spazio simile.
-   Nessuna viene tagliata.
---------------------------------------------------------- */
+========================================================= */
 
 .gallery-media-frame {
 
@@ -7469,12 +7311,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    WIDE IMAGES
-
-   Gameplay/environment possono usare entrambe le colonne,
-   ma hanno comunque un limite di altezza.
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--wide {
@@ -7498,11 +7337,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    PORTRAIT / CHARACTER ART
-
-   Non diventa enorme solo perché l'immagine è verticale.
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--portrait
@@ -7518,11 +7355,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    HUD / CONTAIN
-
-   Stesso principio: tutto visibile, dimensione controllata.
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--contain
@@ -7538,9 +7373,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    GIF
---------------------------------------------------------- */
+========================================================= */
 
 .project-gallery
 .gallery-item--gif
@@ -7551,9 +7386,9 @@ span:last-child {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    CAPTIONS
---------------------------------------------------------- */
+========================================================= */
 
 .gallery-item figcaption {
 

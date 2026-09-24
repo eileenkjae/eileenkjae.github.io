@@ -1,6 +1,5 @@
 /* =========================================================
    PROJECT PAGE
-   Sections are rendered only when their data exists.
 ========================================================= */
 
 const projectPage = document.querySelector("#project-page");

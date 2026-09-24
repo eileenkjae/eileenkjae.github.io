@@ -1,50 +1,13 @@
-/*
-=========================================================
-3D WORK DATA
-=========================================================
-
-CURRENT DISPLAY
-
-ONE CARD = ONE 3D WORK
-
-For now the models are NOT visually divided
-by project or category.
-
-Every model has its own folder:
-
-assets/models/MODEL-ID/
-
-Inside:
-
-model.glb
-copertina.png
-
-Optional future files:
-
-beauty.png
-wireframe.png
-uv.png
-textures.png
-
-
-ANIMATIONS
-
-playAnimation:
-    true  = play animation automatically
-    false = static model
-
-animationName:
-    name of the animation clip inside the GLB
-
-Only use animationName when necessary.
-*/
+/* =========================================================
+   3D WORK DATA
+========================================================= */
 
 
 const MODELS = [
 
-    /* =====================================================
+    /* =========================================================
        PG B-RUSH
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "pg-brush",
@@ -140,9 +103,9 @@ The model uses separate geometry and materials for different parts of the charac
     },
 
 
-    /* =====================================================
+    /* =========================================================
        PG COQUETTE
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "pg-coquette",
@@ -234,9 +197,9 @@ The character was built as a low-poly game asset and designed around the stylize
     },
 
 
-    /* =====================================================
+    /* =========================================================
        ACCENDINO
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "ligher",
@@ -328,9 +291,9 @@ The prop was produced as one of the original 3D assets used to support the game'
     },
 
 
-    /* =====================================================
+    /* =========================================================
        SPAZZATURA
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "Trash Set",
@@ -423,9 +386,9 @@ The set combines multiple street and trash-related assets designed to work toget
     },
 
 
-    /* =====================================================
+    /* =========================================================
        CHIOSCO
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "sicilian kiosk ",
@@ -513,9 +476,9 @@ The set combines multiple street and trash-related assets designed to work toget
     },
 
 
-    /* =====================================================
+    /* =========================================================
        BRACCIO ROBOT
-    ===================================================== */
+    ========================================================= */
 
     {
         id: "bracciorobot",
@@ -553,11 +516,6 @@ The set combines multiple street and trash-related assets designed to work toget
 
         autoRotate: false,
 
-        /*
-        This GLB contains one animation:
-
-        Take 001
-        */
 
         playAnimation: true,
 
