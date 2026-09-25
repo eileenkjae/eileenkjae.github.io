@@ -319,7 +319,7 @@ function createVisionSection(number, vision) {
                     </h2>
 
                     <span class="punk-note">
-                        what I wanted this to be?//
+                        the idea behind the weirdness //
                     </span>
                 </header>
 
@@ -757,24 +757,20 @@ function createDrawingSystemSection(
 
                 ${stepsHTML}
 
-                <div class="drawing-system-main">
-                    <div class="drawing-code-column">
-                        ${codeHTML}
-
-                        ${
-                            drawingSystem.implementationNote
-                                ? `
-                                    <p class="drawing-implementation-note">
-                                        ${escapeHTML(
-                                            drawingSystem.implementationNote
-                                        )}
-                                    </p>
-                                `
-                                : ""
-                        }
-                    </div>
-
+                <div class="drawing-system-editorial">
                     ${notesHTML}
+
+                    ${codeHTML ? `
+                        <details class="drawing-code-details">
+                            <summary>Under the hood / recognition code</summary>
+                            ${drawingSystem.implementationNote ? `
+                                <p class="drawing-implementation-note">
+                                    ${escapeHTML(drawingSystem.implementationNote)}
+                                </p>
+                            ` : ""}
+                            ${codeHTML}
+                        </details>
+                    ` : ""}
                 </div>
             </div>
         </section>
@@ -915,14 +911,13 @@ function createBeforeAfterSection(
             <div class="project-section-content">
                 <header class="project-section-header">
                     <h2>
-                        Before
+                        Development
                         <br>
-                        vs After
+                        Snapshots
                     </h2>
 
                     <span class="punk-note">
-                        do you see the vision? i clearly did
-                        //
+                        from rough to playable //
                     </span>
                 </header>
 
@@ -947,7 +942,7 @@ function createBeforeAfterSection(
    MY WORK
 ========================================================= */
 
-function createWorkSection(number, items) {
+function createWorkSection(number, items, contributions = "") {
     if (!items || items.length === 0) {
         return "";
     }
@@ -1000,6 +995,10 @@ function createWorkSection(number, items) {
                         what I actually did ///
                     </span>
                 </header>
+
+                <div class="project-text">
+                    ${createParagraphs(contributions)}
+                </div>
 
                 <div class="project-work-list">
                     ${workItems}
@@ -1194,6 +1193,9 @@ function buildProject() {
     document.title =
         `${currentProject.title} — Eileen Portfolio`;
 
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.content = currentProject.subtitle || "";
+
     const heroMedia =
         currentProject.hero
             ? createMedia(
@@ -1280,24 +1282,17 @@ function buildProject() {
     );
 
 
-    /* VISION */
+    /* MY WORK */
 
     addSection(
-        currentProject.vision
+        currentProject.myWork
         &&
-        (
-            currentProject.vision.text
-            ||
-            (
-                currentProject.vision.process
-                &&
-                currentProject.vision.process.length
-            )
-        ),
+        currentProject.myWork.length,
         number =>
-            createVisionSection(
+            createWorkSection(
                 number,
-                currentProject.vision
+                currentProject.myWork,
+                currentProject.contributions
             )
     );
 
@@ -1392,16 +1387,24 @@ function buildProject() {
     );
 
 
-    /* MY WORK */
+    /* VISION */
 
     addSection(
-        currentProject.myWork
+        currentProject.vision
         &&
-        currentProject.myWork.length,
+        (
+            currentProject.vision.text
+            ||
+            (
+                currentProject.vision.process
+                &&
+                currentProject.vision.process.length
+            )
+        ),
         number =>
-            createWorkSection(
+            createVisionSection(
                 number,
-                currentProject.myWork
+                currentProject.vision
             )
     );
 

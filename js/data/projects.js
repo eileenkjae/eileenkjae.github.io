@@ -15,10 +15,10 @@ const PROJECTS = [
 
         title: "B-RUSH",
 
-        type: "videogame (work in progress)",
+        type: "Team prototype / work in progress",
 
         subtitle:
-            "A third-person action roguelike prototype where melee combat generates the ink used for charged attacks and hand-drawn sigils.",
+            "A third-person action roguelike prototype where melee combat generates the ink used for hand-drawn sigils.",
 
 
         /* =========================================================
@@ -46,7 +46,7 @@ const PROJECTS = [
 
             muted: true,
 
-            controls: false
+            controls: true
 
         },
 
@@ -56,7 +56,7 @@ const PROJECTS = [
         ========================================================= */
 
         role:
-            "Game Designer / Project Lead / Unity Prototyper",
+            "Game Design / Unity Prototyping",
 
         engine:
             "Unity",
@@ -71,7 +71,7 @@ const PROJECTS = [
             "3-person collaboration",
 
         status:
-            "Long-term WIP / Playable Prototype",
+            "Playable prototype / work in progress",
 
 
         focus: [
@@ -80,7 +80,7 @@ const PROJECTS = [
 
             "Combat & Ink Economy",
 
-            "Gameplay Direction"
+            "Unity Integration"
 
         ],
 
@@ -90,11 +90,9 @@ const PROJECTS = [
         ========================================================= */
 
         overview:
-            `B-Rush is a three-person third-person action roguelike prototype developed during a fixed two-month application deadline. It began as material to support a collaborator's Fine Arts Academy application; the project was included in her portfolio, and she was successfully admitted.'
+            `B-Rush is a third-person action roguelike prototype made by a team of three over two months. Hit enemies, build up ink, then spend it on sigils you draw on screen or charged attacks.
 
-I led the game design, gameplay direction and Unity production: defining systems, guiding scope and design choices, organizing the pipeline and documentation, managing the GitHub repository, integrating shaders, materials and URP renderer changes, and creating part of the 3D content. One collaborator focused mainly on narrative, worldbuilding and 3D modeling; another worked on illustration and selected textures.
-
-The original concept was much larger than the first milestone could support, so the initial sprint focused on proving the combat, ink economy and drawing systems instead of completing the full roguelike structure. B-Rush remains a long-term work in progress. Mixamo clips were used as prototyping animation assets during this stage.`,
+The first milestone brings combat, the ink resource and drawing into one playable prototype. It is still a rough slice of a larger idea, not a finished roguelike.`,
 
 
         /* =========================================================
@@ -114,7 +112,7 @@ The original concept was much larger than the first milestone could support, so 
                         "Paint as Combat",
 
                     text:
-                        `The giant brush is both the visual identity and the main melee weapon, with normal and charged attacks built around readable impact and movement.`
+                        `The giant brush is both the visual identity and the main melee weapon, with normal and charged attacks that connect combat to the ink resource.`
 
                 },
 
@@ -203,7 +201,7 @@ The original concept was much larger than the first milestone could support, so 
                             true,
 
                         controls:
-                            false
+                            true
 
                     },
 
@@ -226,10 +224,10 @@ The original concept was much larger than the first milestone could support, so 
         drawingSystem: {
 
             note:
-                "design first / code second //",
+                "draw it / use it //",
 
             intro:
-                `The drawing mechanic was designed as a gameplay system, not as a coding showcase. I defined the interaction flow, template rules, accuracy threshold, ink cost and gameplay outcomes; the C# implementation was developed iteratively with AI assistance, then integrated, tested and tuned in Unity.`,
+                `I wanted drawing to be part of combat: slow time, draw a sigil, then return to the fight. I defined the interaction flow, templates, recognition threshold, ink costs and effects. The C# implementation was AI-assisted; I integrated it and adjusted the rules in Unity.`,
 
             steps: [
 
@@ -250,7 +248,7 @@ The original concept was much larger than the first milestone could support, so 
 
                 {
                     label: "SCORE",
-                    text: "Return a 0–1 recognition accuracy value."
+                    text: "Return a 0–1 similarity score."
                 },
 
                 {
@@ -269,18 +267,18 @@ The original concept was much larger than the first milestone could support, so 
 
                 {
                     title: "Threshold",
-                    text: "The gameplay layer requires at least 70% recognition accuracy before a sigil can activate."
+                    text: "A sigil needs a recognition score of at least 0.70 to activate. This is a similarity threshold, not a probability that the drawing is correct."
                 },
 
                 {
                     title: "Gameplay Link",
-                    text: "The recognition score is passed back into gameplay logic, where accuracy can influence effect strength and ink cost."
+                    text: "Recognition alone is not enough: the player also needs ink to activate the effect. The drawing input and the resource check belong to the same interaction."
                 }
 
             ],
 
             implementationNote:
-                `This is an excerpt from the real PointCloudRecognizer.cs used by the prototype. It is intentionally shortened for presentation: the point is to show how the design flow reaches an implemented gameplay rule, not to present myself as a gameplay programmer.`,
+                `A shortened excerpt from the prototype’s PointCloudRecognizer.cs. It shows the comparison and scoring step of the AI-assisted implementation described above.`,
 
             code: {
 
@@ -369,7 +367,7 @@ The original concept was much larger than the first milestone could support, so 
                         true,
 
                     controls:
-                        false
+                        true
 
                 },
 
@@ -401,12 +399,12 @@ The original concept was much larger than the first milestone could support, so 
                         true,
 
                     controls:
-                        false
+                        true
 
                 },
 
                 description:
-                    `The same idea integrated into the playable prototype with the character, environment, ink economy, HUD, post-processing and combat state around it.`
+                    `The drawing input inside the combat prototype, alongside the ink HUD, character and environment. This comparison shows integration progress rather than a measured playtest result.`
 
             }
 
@@ -417,48 +415,16 @@ The original concept was much larger than the first milestone could support, so 
            MY WORK
         ========================================================= */
 
+        contributions:
+            `I designed the combat and ink rules, the drawing interaction and the scope of the first prototype. In Unity, I assembled the scene, connected the systems and integrated materials, shaders and URP changes. I also managed the GitHub repository and project documentation.
+
+One teammate worked mainly on narrative, worldbuilding and 3D models; another on illustration and selected textures. I made part of the 3D content. The animations shown here use Mixamo clips.`,
+
         myWork: [
-
-            {
-                label: "Game Design",
-                category: "design"
-            },
-
-            {
-                label: "Gameplay Design",
-                category: "gameplay"
-            },
-
-            {
-                label: "Project Direction",
-                category: "design"
-            },
-
-            {
-                label: "Unity Prototyping",
-                category: "gameplay"
-            },
-
-            {
-                label: "System Integration",
-                category: "gameplay"
-            },
-
-            {
-                label: "Pipeline / Documentation",
-                category: "design"
-            },
-
-            {
-                label: "Low-poly 3D",
-                category: "asset"
-            },
-
-            {
-                label: "Visual Integration",
-                category: "visual"
-            }
-
+            { label: "Combat & Ink Rules", category: "design" },
+            { label: "Drawing Interaction", category: "gameplay" },
+            { label: "Unity Integration", category: "gameplay" },
+            { label: "Scope & Documentation", category: "design" }
         ],
 
 
@@ -468,179 +434,26 @@ The original concept was much larger than the first milestone could support, so 
 
 
 gallery: [
-
-
     {
         type: "image",
-
-        src:
-            "assets/projects/b-rush/narrative.jpg",
-
-        alt:
-            "Character illustration for B-Rush.",
-
-        caption:
-            "Evelyn#123",
-
-        layout:
-            "portrait"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/narrative2.jpg",
-
-        alt:
-            "Character illustration for B-Rush.",
-
-        caption:
-            "Evelyn#124",
-
-        layout:
-            "contain"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/narrative3.jpg",
-
-        alt:
-            "Character design illustration for B-Rush.",
-
-        caption:
-            "Evelyn#125",
-
-        layout:
-            "portrait"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/sketches.png",
-
-        alt:
-            "Character design sheet for B-Rush.",
-
-        caption:
-            "Evelyn#126",
-
-        layout:
-            "portrait"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/sketches1.png",
-
-        alt:
-            "Character design sheet for B-Rush.",
-
-        caption:
-            "Evelyn#127",
-
-        layout:
-            "portrait"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/narrative1.jpg",
-
-        alt:
-            "Creature development sketches showing different visual states.",
-
-        caption:
-            "Creature concept — transformation study",
-
-        layout:
-            "portrait"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/hud.png",
-
-        alt:
-            "B-Rush HUD graphic study.",
-
-        caption:
-            "HUD#123",
-
-        layout:
-            "contain"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/hud1.png",
-
-        alt:
-            "B-Rush HUD graphic study with green and red variants.",
-
-        caption:
-            "HUD#124",
-
-        layout:
-            "contain"
-    },
-
-    {
-        type: "image",
-
-        src:
-            "assets/projects/b-rush/hud2.gif",
-
-        alt:
-            "Animated B-Rush loading screen.",
-
-        caption:
-            "HUD#125 — loading screen",
-
-        layout:
-            "portrait"
+        src: "assets/projects/b-rush/map-top.png",
+        alt: "Top-down development view of the B-Rush prototype level.",
+        caption: "The prototype area from above — scene layout and Unity integration."
     },
     {
         type: "image",
-
-        src:
-            "assets/projects/b-rush/map-top.png",
-
-        alt:
-            "Top-down development view of the B-Rush prototype level.",
-
-        caption:
-            "Level layout — top-down development view"
+        src: "assets/projects/b-rush/hud.png",
+        alt: "B-Rush HUD graphic study.",
+        caption: "HUD study for the prototype — part of the team's visual development.",
+        layout: "contain"
     },
-     {
+    {
         type: "image",
-
-        src:
-            "assets/projects/b-rush/scene-view1.png",
-
-        alt:
-            "B-Rush gameplay screenshot showing layered paint splash effects during combat.",
-
-        caption:
-            "Combat VFX — paint splash feedback during gameplay",
-
-        layout:
-            "wide"
+        src: "assets/projects/b-rush/narrative3.jpg",
+        alt: "Evelyn character illustration for B-Rush.",
+        caption: "Evelyn — illustration by a Matilde Troncati, included as visual context.",
+        layout: "portrait"
     }
-
 ],
 
 
@@ -663,10 +476,10 @@ gallery: [
 
         title: "COQUETTE",
 
-        type: "Videogame",
+        type: "Solo game / completed prototype",
 
         subtitle:
-            "A cute, saturated and grotesque low-poly bad trip built around cigarette-based combat.",
+            "A short bad trip experience: four cigarette weapons, smoke enemies and one sharp knife.",
 
 
         /* =========================================================
@@ -694,7 +507,7 @@ gallery: [
 
             muted: true,
 
-            controls: false
+            controls: true
 
         },
 
@@ -725,9 +538,9 @@ gallery: [
 
         focus: [
 
-            "Weapon / Tool Design",
+            "Weapon Roles",
 
-            "Visual Direction",
+            "Compact Level",
 
             "Solo Prototyping"
 
@@ -739,7 +552,9 @@ gallery: [
         ========================================================= */
 
         overview:
-            `COQUETTE is a short unity solo project, built around a dicotomy between cute and gross. Have you ever seen before a shooter where your weapons are cigarettes? now you have.`,
+            `Cute colours, gross enemies, cigarettes for weapons. COQUETTE is a short solo Unity project I completed in 46 days.
+
+I built a compact level around four cigarette types and a knife, with enemies, checkpoints, collectibles and a final encounter. The playable prototype is available on itch.io.`,
 
 
         /* =========================================================
@@ -749,7 +564,7 @@ gallery: [
         vision: {
 
             text:
-                `I wanted the game to feel like and edgy fragment of early-2000s internet cuulture: cute, oversaturated and built around serious themes, intentionally using them in questionable ways; with addictions like cigarettes and drugs often being romanticized, COQUETTE wants to use them in a non-serious way.`,
+                `I wanted a little piece of early-2000s internet weirdness: cute colours, oversaturation and something slightly wrong underneath. Cigarettes and drug imagery are part of that absurd, grotesque tone.`,
 
 
             process: [
@@ -760,7 +575,7 @@ gallery: [
                         "The Look",
 
                     text:
-                        'I wanted to use early-internet imagery and the contrast between cute colors and scary vibes. Look at "Creepy-chan"!, the main ispiration source.'
+                        'Early-internet imagery, cute colours and unsettling faces. "Creepy-chan" was one of my main visual references.'
 
                 },
 
@@ -771,7 +586,7 @@ gallery: [
                         "The Gimmick",
 
                     text:
-                        `The cigarette theme as a weapon became a weapon wheel with four mechanically different effects. After all..."Smoking Kills", right?`
+                        `The cigarette joke became a weapon wheel with four different jobs: single-target damage, piercing, immobilising and area damage. "Smoking kills" became rather literal.`
 
                 },
 
@@ -782,7 +597,7 @@ gallery: [
                         "The Game",
 
                     text:
-                        `I built a small but compact level, enemies, checkpoints, collectibles and a final encounter around that badtrip idea. A short but remarkable journey.`
+                        `One compact level, collectible lighters and a final encounter. That was the size of the game I finished in 46 days.`
 
                 }
 
@@ -798,11 +613,11 @@ gallery: [
         gameplay: {
 
             note:
-                "dont smoke people! //",
+                "don't smoke, people! //",
 
 
             intro:
-                `Change your cigarette type to adapt to different situations, when enemies have smoked too much, CUT them off! Try to find all lighters and explore this little situation gooing inside your head.`,
+                `Switch cigarettes for different enemies and groups. The basic shot has unlimited uses; the other types are limited. Smoke enemies ignore all four, so it is time to bring out the knife. Collectible lighters give you something else to look for along the way.`,
 
 
             features: [
@@ -830,12 +645,12 @@ gallery: [
                             true,
 
                         controls:
-                            false
+                            true
 
                     },
 
                     text:
-                        `The four cigarette types use different attack effects, area sizes and crowd-control behaviour.`
+                        `Four slots, four jobs. The wheel lets the player switch between a direct hit, a piercing attack, a non-damaging immobilising area and a lethal area attack.`
 
                 },
 
@@ -863,12 +678,12 @@ gallery: [
                             true,
 
                         controls:
-                            false
+                            true
 
                     },
 
                     text:
-                        `Enemies made of smoke are immune to cigarette attacks and can only be killed with the knife, cut away their bad breath.`
+                        `Smoke enemies are immune to cigarette attacks and can only be killed with the knife. More smoke will not solve this one.`
 
                 }
 
@@ -915,10 +730,10 @@ gallery: [
                         "Pink Black Devil",
 
                     effect:
-                        "Large no dmg smoke area + immobilize",
+                        "Large smoke area: immobilises, no damage",
 
                     meta:
-                        "Limited uses + feedback"
+                        "Limited uses"
 
                 },
 
@@ -929,7 +744,7 @@ gallery: [
                         "Black Black Devil",
 
                     effect:
-                        "Large lethal smoke area ",
+                        "Large lethal smoke area",
 
                     meta:
                         "Limited uses"
@@ -973,7 +788,7 @@ gallery: [
                 },
 
                 description:
-                    `One of the only surviving image from the early development stage: a photo of the Unity scene with basic geometry, placeholder presentation and an early version of the character.`
+                    `One of the few images I kept from early development: a photo of the Unity scene with basic geometry and an early character. A rough record of where it started.`
 
             },
 
@@ -997,7 +812,7 @@ gallery: [
                 },
 
                 description:
-                    `The final prototype combines the saturated environment, custom UI, gameplay systems, props and the finished visual language inside one compact level.`
+                    `The completed prototype: the environment, HUD and gameplay brought together in one compact level. These images show how the presentation changed during development.`
 
             }
 
@@ -1008,71 +823,17 @@ gallery: [
            MY WORK
         ========================================================= */
 
-       myWork: [
+        contributions:
+            `I designed the weapon roles and level, built the gameplay in Unity, and put together the UI and visual direction. I also made low-poly assets for the project.
 
-    {
-        label:
-            "Game Design",
+The programming was AI-assisted. My focus was defining the behaviour, integrating the pieces and getting a small game through to a finished prototype.`,
 
-        category:
-            "design"
-    },
-
-
-    {
-        label:
-            "Gameplay Design",
-
-        category:
-            "gameplay"
-    },
-
-
-    {
-        label:
-            "Unity Workflow",
-
-        category:
-            "gameplay"
-    },
-
-
-    {
-        label:
-            "Level / Scene Design",
-
-        category:
-            "design"
-    },
-
-
-    {
-        label:
-            "UI Design",
-
-        category:
-            "visual"
-    },
-
-
-    {
-        label:
-            "Art Direction",
-
-        category:
-            "visual"
-    },
-
-
-    {
-        label:
-            "Low-poly 3D",
-
-        category:
-            "asset"
-    }
-
-],
+        myWork: [
+            { label: "Weapon & Enemy Rules", category: "design" },
+            { label: "Level & Checkpoints", category: "design" },
+            { label: "Unity Prototyping", category: "gameplay" },
+            { label: "UI & Visual Direction", category: "visual" }
+        ],
 
 
         /* =========================================================
@@ -1093,7 +854,7 @@ gallery: [
                     "COQUETTE main menu and UI.",
 
                 caption:
-                    "Main Menu / UI — designed manually in Canva"
+                    "Main menu — carrying the game’s visual style into the UI"
 
             },
 
@@ -1110,7 +871,7 @@ gallery: [
                     "Final encounter in COQUETTE.",
 
                 caption:
-                    "Final Encounter — fight your(many)self clones"
+                    "Final encounter — fighting yourself. Several times over."
 
             }
 
@@ -1138,3 +899,6 @@ gallery: [
     }
 
 ];
+
+// Lead with the completed project; keep the team prototype directly after it.
+PROJECTS.sort((a, b) => Number(b.id === "coquette") - Number(a.id === "coquette"));

@@ -7534,3 +7534,51 @@ span:last-child {
     }
 
 }
+
+
+/* Editorial hierarchy: existing visual language, optional technical detail. */
+.drawing-system-editorial .drawing-design-notes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.drawing-code-details {
+    margin-top: 24px;
+    min-width: 0;
+}
+
+.drawing-code-details summary {
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    padding: 12px 0;
+}
+
+.drawing-code-details summary:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+/* Keep the original oversized headline inside narrow phone screens. */
+@media (max-width: 480px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-title-wrapper,
+    .hero-bottom {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(48px, 16.5vw, 78px);
+    }
+}
+
+@media (max-width: 800px) {
+    .drawing-system-editorial .drawing-design-notes {
+        grid-template-columns: 1fr;
+    }
+}
