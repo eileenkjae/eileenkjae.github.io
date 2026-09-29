@@ -476,7 +476,7 @@ gallery: [
 
         title: "COQUETTE",
 
-        type: "Solo game / completed prototype",
+        type: "Solo game / ACADEMIC PROJECT",
 
         subtitle:
             "A short bad trip experience: four cigarette weapons, smoke enemies and one sharp knife.",
@@ -902,3 +902,198 @@ The programming was AI-assisted. My focus was defining the behaviour, integratin
 
 // Lead with the completed project; keep the team prototype directly after it.
 PROJECTS.sort((a, b) => Number(b.id === "coquette") - Number(a.id === "coquette"));
+
+PROJECTS.splice(1, 0, {
+    "id": "lumen-life",
+    "title": "LUMEN LIFE",
+    "type": "SOLO GAME / ACADEMIC PROJECT",
+    "subtitle": "A lantern to carry, throw and recover. A short sequence of puzzles built around where you place your light.",
+    "cover": "assets/projects/lumen-life/cover.png",
+    "hero": {
+        "type": "video",
+        "src": "assets/projects/lumen-life/gameplay.mp4",
+        "poster": "assets/projects/lumen-life/cover.png",
+        "autoplay": false,
+        "muted": true,
+        "controls": true,
+        "preload": "none"
+    },
+    "compactIntro": true,
+    "heroNote": "Recorded playthrough · 2:37 · the on-screen double-tap W prompt predates the reported Shift revision below.",
+    "role": "Game Design / Level Design / Unity Implementation",
+    "engine": "Unity",
+    "duration": "~6 weeks",
+    "status": "Completed academic project",
+    "overview": "Lumen Life is a short, linear puzzle-platform experience made under an academy deadline. I designed a sequence of spaces around a portable lantern, totems and traversal: reaching the next target can mean sending the lantern ahead and then finding a route to it.",
+    "contributions": "I designed the mechanics and puzzles, planned and built the level, created visual content and UI, and integrated the project in Unity. I also collected player feedback and revised the design. Programming was handled separately; I did not write the project's code.",
+    "myWork": [
+        {
+            "label": "Game & Puzzle Design",
+            "category": "design"
+        },
+        {
+            "label": "Level Planning & Construction",
+            "category": "design"
+        },
+        {
+            "label": "Unity Integration",
+            "category": "gameplay"
+        },
+        {
+            "label": "Visual Production & UI",
+            "category": "visual"
+        }
+    ],
+    "caseStudy": [
+        {
+            "id": "interaction",
+            "title": "One light, two routes",
+            "intro": "The player's route and the lantern's route do not always coincide. Throwing the lantern reaches targets that walking alone cannot; moving through the space then brings the player back to the light.",
+            "cards": [
+                {
+                    "title": "Light & activation",
+                    "text": "The recorded opening pairs a lantern totem with a match totem. The player throws the lantern onto one, then lights the other with a match to clear the way forward."
+                },
+                {
+                    "title": "Height & separation",
+                    "text": "Geysers, walls and raised platforms separate the player from the next target. Later spaces combine lantern throws with jumps and platform traversal."
+                },
+                {
+                    "title": "A readable target",
+                    "text": "Outlines keep totems and platforms visible in the dark. Their position gives the player something to aim for even when the route still needs to be worked out."
+                }
+            ]
+        },
+        {
+            "id": "paper-to-playable",
+            "title": "From paper to playable",
+            "intro": "I wrote the interaction rules and used a shared symbol legend to plan six room concepts. Dashed lines separate intended lantern throws from player jumps; wall heights and platform positions constrain each route.",
+            "media": [
+                {
+                    "type": "image",
+                    "src": "assets/projects/lumen-life/room-sketches.jpg",
+                    "alt": "Original sheet with six numbered perspective room sketches, doors, totems, geysers and dashed jump and lantern trajectories.",
+                    "rotation": "left",
+                    "caption": "Original room plans · rotated for reading. Open the photograph for the full-size detail."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/projects/lumen-life/first-room.jpg",
+                    "alt": "Recorded opening puzzle with a lantern totem, a match totem and a barrier behind them.",
+                    "caption": "Opening puzzle in Unity · the two-totem interaction from sketch 1, built into an outdoor space."
+                }
+            ],
+            "cards": [
+                {
+                    "title": "Introduce",
+                    "text": "Sketch 1 isolates two totems and a door. The recorded opening retains that simple activation sequence, with control prompts beside the interactions."
+                },
+                {
+                    "title": "Separate",
+                    "text": "Sketch 2 puts a target beyond a wall: the lantern can cross where the player cannot simply jump. This establishes different paths for player and object."
+                },
+                {
+                    "title": "Combine",
+                    "text": "Later sketches add geysers, elevation and platforms. The recording shows these elements combined in longer traversal sequences; the plans are concepts, not exact maps of every finished space."
+                }
+            ],
+            "details": [
+                {
+                    "label": "Original mechanics sheet (Italian)",
+                    "url": "assets/projects/lumen-life/mechanics.jpg"
+                },
+                {
+                    "label": "Original symbol legend (Italian)",
+                    "url": "assets/projects/lumen-life/legend.jpg"
+                }
+            ]
+        },
+        {
+            "id": "development",
+            "title": "Prototype → recorded build",
+            "intro": "The WIP isolates lantern interaction on an open test surface. The later recording brings it into bounded puzzle spaces with a HUD, control signs and outlined targets. These are different viewpoints and stages, not a matched camera comparison.",
+            "media": [
+                {
+                    "type": "video",
+                    "src": "assets/projects/lumen-life/wip.mp4",
+                    "poster": "assets/projects/lumen-life/wip-poster.jpg",
+                    "preload": "none",
+                    "autoplay": false,
+                    "muted": true,
+                    "controls": true,
+                    "caption": "WIP · 26 seconds of the interaction test; recording software at the end was removed."
+                },
+                {
+                    "type": "video",
+                    "src": "assets/projects/lumen-life/traversal.mp4",
+                    "alt": "Lantern throw towards an elevated totem above geysers, with HUD and platform outlines in the recorded build.",
+                    "caption": "Recorded build · elevation turns the lantern throw into part of the traversal puzzle."
+                }
+            ]
+        },
+        {
+            "id": "playtesting",
+            "title": "Playtesting & iteration",
+            "intro": "Players had mixed opinions about the controls. Some also struggled to solve a puzzle or work out how to reach a totem. I responded with changes to movement and to the information available during play.",
+            "changes": [
+                {
+                    "focus": "Movement input",
+                    "change": "Changed sprint activation from double-tap W to Shift, and kept sprint active when changing between W/A/S/D directions while still moving."
+                },
+                {
+                    "focus": "Totem visibility",
+                    "change": "Made totem outlines slightly more visible through walls to help players locate their next target."
+                },
+                {
+                    "focus": "Camera",
+                    "change": "Adjusted the camera in confined spaces."
+                },
+                {
+                    "focus": "Lantern tracking",
+                    "change": "Added a ground indicator from the player towards the lantern so it was easier to locate after a throw."
+                },
+                {
+                    "focus": "Temporary activation",
+                    "change": "Displayed the remaining match duration on the totem where it had been lit."
+                }
+            ],
+            "outcome": "Players who tried the requested changes again reported being satisfied. This is a qualitative response, rather than a measured improvement in completion rates or timing.",
+            "note": "Iteration account reconstructed from my development recollection. The supplied recording still shows the earlier sprint prompt; it does not demonstrate every revision listed here."
+        },
+        {
+            "id": "showcase",
+            "title": "Public showcase",
+            "intro": "Lumen Life was selected by Nautilus Academy for showcase at its Etna Comics 2026 stand, where visitors could play the project.",
+            "media": [
+                {
+                    "type": "image",
+                    "src": "assets/projects/lumen-life/showcase.jpg",
+                    "alt": "Lumen Life displayed on a monitor at the academy stand, with a keyboard and controller in front.",
+                    "layout": "portrait",
+                    "caption": "Nautilus Academy stand · Etna Comics 2026."
+                }
+            ]
+        },
+        {
+            "id": "retrospective",
+            "title": "What I would carry forward",
+            "intro": "The six-week deadline kept the scope short and largely linear. The strongest part of the project is taking a small interaction vocabulary from paper layouts to a playable sequence.",
+            "cards": [
+                {
+                    "title": "Readability before more rooms",
+                    "text": "A next pass would focus on distinguishing routes and targets in dark areas, then checking whether new players can read them without help."
+                },
+                {
+                    "title": "Record the next test",
+                    "text": "I would keep versioned observations and compare the same puzzle before and after a change. Positive feedback is useful, but it is not a measure of where players still get stuck."
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "label": "Download Lumen Life on itch.io",
+            "url": "https://kissaleen.itch.io/lumen-life"
+        }
+    ]
+});

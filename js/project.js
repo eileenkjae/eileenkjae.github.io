@@ -95,7 +95,7 @@ function createMedia(media, extraClass = "") {
                 ${loop}
                 ${muted}
                 playsinline
-                preload="metadata"
+                preload="${media.preload === "none" ? "none" : "metadata"}"
             >
                 Your browser does not support HTML video.
             </video>
@@ -1180,6 +1180,39 @@ function showProjectNotFound() {
    BUILD PAGE
 ========================================================= */
 
+
+function createCaseStudySection(number, section) {
+    const media = (section.media || []).map(item => {
+        const rotated = item.rotation === "left" ? " evidence-rotated" : "";
+        const portrait = item.layout === "portrait" ? " evidence-portrait" : "";
+        const content = createMedia(item);
+        return `<figure class="evidence-item${portrait}">
+            <div class="evidence-frame${rotated}">${item.type === "video" ? content :
+                `<a href="${escapeHTML(item.src)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: ${escapeHTML(item.alt)}">${content}</a>`}</div>
+            <figcaption>${escapeHTML(item.caption)}</figcaption>
+        </figure>`;
+    }).join("");
+    const cards = (section.cards || []).map(card => `<article class="evidence-card">
+        <h3>${escapeHTML(card.title)}</h3>${createParagraphs(card.text)}</article>`).join("");
+    const changes = (section.changes || []).map(change => `<div class="iteration-row">
+        <dt>${escapeHTML(change.focus)}</dt><dd>${escapeHTML(change.change)}</dd></div>`).join("");
+    const details = (section.details || []).map(link => `<li><a href="${escapeHTML(link.url)}"
+        target="_blank" rel="noopener noreferrer">${escapeHTML(link.label)} ↗</a></li>`).join("");
+    return `<section class="project-section evidence-section" id="${escapeHTML(section.id)}">
+        <div class="project-section-side"><span class="project-section-number">${escapeHTML(number)}</span></div>
+        <div class="project-section-content">
+            <header class="project-section-header"><h2>${escapeHTML(section.title)}</h2></header>
+            <div class="project-text">${createParagraphs(section.intro)}</div>
+            ${media ? `<div class="evidence-media-grid">${media}</div>` : ""}
+            ${cards ? `<div class="evidence-cards">${cards}</div>` : ""}
+            ${changes ? `<dl class="iteration-list">${changes}</dl>` : ""}
+            ${section.outcome ? `<div class="project-text iteration-outcome"><h3>After the changes</h3>${createParagraphs(section.outcome)}</div>` : ""}
+            ${section.note ? `<p class="evidence-note">${escapeHTML(section.note)}</p>` : ""}
+            ${details ? `<details class="evidence-details"><summary>Read the original design notes</summary><ul>${details}</ul></details>` : ""}
+        </div>
+    </section>`;
+}
+
 function buildProject() {
     if (!projectPage) {
         return;
@@ -1423,10 +1456,14 @@ function buildProject() {
     );
 
 
+    (currentProject.caseStudy || []).forEach(section =>
+        addSection(true, number => createCaseStudySection(number, section))
+    );
+
     /* FINAL PAGE */
 
     projectPage.innerHTML = `
-        <article class="project-hero">
+        <article class="project-hero${currentProject.compactIntro ? " project-hero--compact" : ""}">
             <div class="project-back-row">
                 <a
                     href="index.html#projects"
@@ -1473,6 +1510,14 @@ function buildProject() {
                 </span>
             </header>
 
+            ${currentProject.compactIntro ? `
+                <div class="project-meta">${metaHTML}</div>
+                <div class="project-quick-links">
+                    <a class="rough-button" href="${escapeHTML(currentProject.links[0].url)}" target="_blank" rel="noopener noreferrer">Download on itch.io ↗</a>
+                    <a href="#paper-to-playable">Paper → playable</a>
+                    <a href="#playtesting">Playtesting & iteration</a>
+                </div>` : ""}
+
             <div class="project-hero-visual">
                 ${heroMedia}
 
@@ -1481,8 +1526,10 @@ function buildProject() {
                 </span>
             </div>
 
+            ${currentProject.heroNote ? `<p class="evidence-note hero-evidence-note">${escapeHTML(currentProject.heroNote)}</p>` : ""}
+
             ${
-                metaHTML.trim()
+                !currentProject.compactIntro && metaHTML.trim()
                     ? `
                         <div class="project-meta">
                             ${metaHTML}
