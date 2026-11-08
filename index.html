@@ -2,355 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Eileen Boscaglia — game designer based in Italy. Gameplay, Unity prototypes and small games. Open to remote opportunities."
-    >
-
-    <title>Eileen — Game Design Portfolio</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/acid-hud.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eileen Boscaglia - game designer from Italy. Game design, level design and Unity prototypes. Open to remote work.">
+    <title>Eileen Boscaglia - Game Design Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 fill=%22%23caff35%22/%3E%3Ctext x=%228%22 y=%2213%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%23ff6aa9%22 font-family=%22Arial%22 font-weight=%22900%22%3E*%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
 
-    <!-- ==================================================
-         HEADER
-    =================================================== -->
+<main id="top" class="desktop">
 
-    <header class="site-header">
+    <section class="hero">
 
-        <a
-            class="site-logo"
-            href="#top"
-            aria-label="Back to top"
-        >
-            EILEEN BOSCAGLIA
-            <span>/ PORTFOLIO </span>
-        </a>
+        <nav class="desk-icons" id="desk-icons" aria-label="Projects shortcuts"></nav>
 
-        <nav class="main-nav" aria-label="Main navigation">
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#three-d">
-                3D
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <main id="top">
-
-        <!-- ==================================================
-             HERO
-        =================================================== -->
-
-        <section class="hero">
-
-            <div class="hero-index">
-                Last Update: 09/2026
+        <div class="win win--hero">
+            <div class="win-bar">
+                <span class="win-title">eileen_boscaglia.exe</span>
+                <span class="win-btns" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
 
-            <div class="hero-title-wrapper">
+            <div class="win-body hero-body">
+                <p class="prompt">C:\EILEEN&gt; run game_designer.exe<span class="caret">█</span></p>
 
-                <p class="hand-note hero-note">
-                    videogames first//
-                </p>
-
-                <h1 class="hero-title">
-                    EILEEN!
-                    <br>
-                    YOUR
-                    <br>
-                    GAME
-
-                    DESIGNER
+                <h1 class="glitch" data-text="EILEEN! YOUR GAME DESIGNER">
+                    EILEEN!<br>YOUR GAME<br>DESIGNER
                 </h1>
 
-            </div>
+                <p class="hero-line">I design mechanics and levels and build them in Unity.</p>
 
-            <div class="hero-bottom">
-
-                <p class="hero-description">
-                    I turn game ideas into something you can play: mechanics,
-                    levels and small Unity prototypes. Then I try to break them.
-                </p>
-
-                <div class="hero-tags">
-                    <span>Gameplay</span>
-                    <span>Prototyping</span>
-                    <span>Unity</span>
-                    <span>Level Design</span>
+                <div class="btn-row">
+                    <a class="btn btn--acid" href="#Academy">▶ See my work</a>
+                    <a class="btn" href="https://kissaleen.itch.io" target="_blank" rel="noopener noreferrer">itch.io ↗</a>
+                    <a class="btn" href="mailto:eileen.kjae@gmail.com">Email</a>
                 </div>
-
             </div>
 
-            <div class="hero-mark" aria-hidden="true">
-                ×
+            <div class="win-status marquee" aria-hidden="true">
+                <span>★ open to remote work ★ based in Italy ★ game design · gameplay · level design · unity ★ last update 11/2026 ★ open to remote work ★ based in Italy ★ game design · gameplay · level design · unity ★ last update 11/2026&nbsp;</span>
             </div>
+        </div>
 
-        </section>
+        <span class="sticker sticker--pink" aria-hidden="true">videogames first //</span>
+    </section>
 
+    <section class="block" id="Academy">
+        <div class="addr"><span>📁</span> C:\EILEEN\ACADEMY_PROJECTS</div>
+        <h2 class="block-title">Academy projects</h2>
+        <div class="card-grid" id="games-grid"></div>
+    </section>
 
-        <!-- ==================================================
-             PROJECTS
-        =================================================== -->
+    <section class="block" id="wip">
+        <div class="addr"><span>📁</span> C:\EILEEN\EARLY_WIP</div>
+        <h2 class="block-title">Prototype <span class="tape">EARLY WIP</span></h2>
+        <div id="proto-list"></div>
+    </section>
 
-        <section
-            class="section projects-section"
-            id="projects"
-        >
+    <section class="block about-grid" id="about">
 
-            <header class="section-header">
+        <div class="win">
+            <div class="win-bar win-bar--plain">
+                <span class="win-title">readme.txt - Notepad</span>
+                <span class="win-btns" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="menu-bar" aria-hidden="true"><span>File</span><span>Edit</span><span>Search</span><span>Help</span></div>
+            <div class="win-body notepad">
+                <p>Hi, I'm Eileen, a game designer from Italy.</p>
+                <p>I like coming up with mechanics, building levels and getting them to work in Unity. My favourite moment is when an idea becomes something I can actually play.</p>
+                <dl class="kv">
+                    <dt>FOCUS</dt><dd>Game design · Gameplay · Level design · Prototyping</dd>
+                    <dt>TOOLS</dt><dd>Unity · GitHub · Maya · Substance Painter </dd>
+                </dl>
+            </div>
+        </div>
 
-                <div class="section-number">
-                    01 /
-                </div>
-
+        <div class="win win--dialog" id="contact">
+            <div class="win-bar">
+                <span class="win-title">New message</span>
+                <span class="win-btns" aria-hidden="true"><i>×</i></span>
+            </div>
+            <div class="win-body dialog">
+                <div class="dialog-icon" aria-hidden="true">✉</div>
                 <div>
-
-                    <h2>
-                        Projects
-                    </h2>
-
-                    <p class="section-description">
-                        Small Unity games and prototypes: mechanics, puzzle spaces and the design decisions behind them.
-                    </p>
-
+                    <p class="dialog-big">Let's make something playable.</p>
+                    <p class="muted">Italy · open to remote</p>
                 </div>
-
-            </header>
-
-            <div
-                class="work-grid"
-                id="projects-grid"
-            >
-
+                <div class="btn-row dialog-btns">
+                    <a class="btn btn--acid" href="mailto:eileen.kjae@gmail.com">Email</a>
+                    <a class="btn" href="https://www.linkedin.com/in/eileen-boscaglia-78473529b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a class="btn" href="https://kissaleen.itch.io" target="_blank" rel="noopener noreferrer">itch.io ↗</a>
+                </div>
             </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             3D WORK
-        =================================================== -->
-
-        <section
-            class="section models-section"
-            id="three-d"
-        >
-
-            <header class="section-header">
-
-                <div class="section-number">
-                    02 /
-                </div>
-
-                <div>
-
-                    <h2>
-                        3D Work
-                    </h2>
-
-                    <p class="section-description">
-                        The low-poly side of my projects, plus a few personal studies.
-                    </p>
-
-                </div>
-
-            </header>
-
-            <div
-                class="work-grid model-grid"
-                id="models-grid"
-            >
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             ABOUT
-        =================================================== -->
-
-        <section
-            class="section about-section"
-            id="about"
-        >
-
-            <header class="section-header">
-
-                <div class="section-number">
-                    03 /
-                </div>
-
-                <div>
-                    <h2>
-                        About me:
-                    </h2>
-                </div>
-
-            </header>
-
-            <div class="about-layout">
-
-                <div class="about-main">
-
-                    <p class="about-big">
-                        Hi! I'm Eileen, a game designer from Italy.
-                        I like coming up with mechanics, building levels and getting things running in Unity.
-                        I also make low-poly assets when a prototype needs them.
-                        My favourite part? Seeing an idea become something I can actually play with.
-                    </p>
-
-                </div>
-
-                <aside class="about-side">
-
-                    <div class="info-block">
-
-                        <h3>
-                            FOCUS
-                        </h3>
-
-                        <p>
-                            Gameplay Design<br>
-                            Unity Prototyping<br>
-                            Level Design
-
-                        </p>
-
-                    </div>
-
-                    <div class="info-block">
-
-                        <h3>
-                            TOOLS
-                        </h3>
-
-                        <p>
-                            Unity<br>
-                            GitHub<br>
-                            Maya<br>
-                            Substance Painter (basics)
-                        </p>
-
-                    </div>
-
-                </aside>
-
-            </div>
-
-            <p class="hand-note about-note">
-                build - test - break - rebuild
-            </p>
-
-        </section>
-
-
-        <!-- ==================================================
-             CONTACT
-        =================================================== -->
-
-        <section
-            class="section contact-section"
-            id="contact"
-        >
-
-            <div class="section-number">
-                04 /
-            </div>
-
-            <div class="contact-main">
-
-                <p class="contact-small">
-                    ITALY / OPEN TO REMOTE OPPORTUNITIES
-                </p>
-
-                <h2>
-                    Let's create
-                    <br>
-                    something together.
-                </h2>
-
-                <div class="contact-links">
-
-                    <a href="mailto:eileen.kjae@gmail.com" class="rough-button">
-                        Email ↗
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/eileen-boscaglia-78473529b/"
-                        class="rough-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn ↗
-                    </a>
-
-                    <a
-                        href="https://kissaleen.itch.io"
-                        class="rough-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        itch.io ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ==================================================
-         FOOTER
-    =================================================== -->
-
-    <footer class="site-footer">
-
-        <span>
-            EILEEN / GAME DESIGN
-        </span>
-
-        <span>
-            Ideas into playable things.
-        </span>
-
-    </footer>
-
-
-    <!-- ==================================================
-         DATA
-    =================================================== -->
-
-    <script src="js/data/projects.js"></script>
-    <script src="js/data/models.js"></script>
-    <script src="js/home.js"></script>
-
+        </div>
+
+    </section>
+
+</main>
+
+<nav class="taskbar" aria-label="Main navigation">
+    <a class="start" href="#top"><b>✱</b> eileen</a>
+    <a class="task" href="#Academy">Academy</a>
+    <a class="task" href="#wip">Early WIP</a>
+    <a class="task" href="#about">About</a>
+    <a class="task" href="#contact">Contact</a>
+    <span class="tray"><span id="clock">--:--</span></span>
+</nav>
+
+<script src="js/data/projects.js"></script>
+<script src="js/site.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

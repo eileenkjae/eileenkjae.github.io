@@ -1,115 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Game design project case study."
-    >
-
-    <title>Project — Eileen Portfolio</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/acid-hud.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game design project by Eileen Boscaglia.">
+    <title>Project - Eileen Boscaglia</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 fill=%22%23caff35%22/%3E%3Ctext x=%228%22 y=%2213%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%23ff6aa9%22 font-family=%22Arial%22 font-weight=%22900%22%3E*%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/site.css">
 </head>
-
 
 <body>
 
-    <!-- ==================================================
-         HEADER
-    =================================================== -->
+<main id="project-page" class="desktop project">
+    <p class="prompt">Loading project<span class="caret">█</span></p>
+</main>
 
-    <header class="site-header">
+<nav class="taskbar" aria-label="Main navigation">
+    <a class="start" href="index.html"><b>✱</b> eileen</a>
+    <a class="task" href="index.html#Academy">Academy</a>
+    <a class="task" href="index.html#wip">Early WIP</a>
+    <a class="task" href="index.html#about">About</a>
+    <a class="task" href="index.html#contact">Contact</a>
+    <span class="tray"><span id="clock">--:--</span></span>
+</nav>
 
-        <a
-            class="site-logo"
-            href="index.html"
-        >
-            EILEEN BOSCAGLIA
-            <span>/ PORTFOLIO </span>
-        </a>
-
-
-        <nav
-            class="main-nav"
-            aria-label="Main navigation"
-        >
-
-            <a href="index.html#projects">
-                Projects
-            </a>
-
-            <a href="index.html#three-d">
-                3D
-            </a>
-
-            <a href="index.html#about">
-                About
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- ==================================================
-         PROJECT CONTENT
-    =================================================== -->
-
-    <main id="project-page">
-
-        <div class="project-loading">
-
-            <span class="project-loading-mark">
-                ×
-            </span>
-
-            Loading project...
-
-        </div>
-
-    </main>
-
-
-    <!-- ==================================================
-         FOOTER
-    =================================================== -->
-
-    <footer class="site-footer">
-
-        <span>
-            EILEEN / GAME DESIGN
-        </span>
-
-        <span>
-            Ideas into playable things.
-        </span>
-
-    </footer>
-
-
-    <!-- ==================================================
-         DATA + PROJECT SCRIPT
-    =================================================== -->
-
-    <script src="js/data/projects.js"></script>
-
-    <script src="js/project.js"></script>
-
+<script src="js/data/projects.js"></script>
+<script src="js/site.js"></script>
+<script src="js/project.js"></script>
 </body>
-
 </html>
