@@ -10,7 +10,7 @@ const PROJECTS = [
         file: "coquette.exe",
         title: "COQUETTE",
         type: "Solo game · Academy project",
-        tagline: "Cute colours, gross enemies, cigarettes for weapons. A short and edgy bad trip in one feverish level.",
+        tagline: "Cute colours, dumb enemies, cigarettes for weapons. A short and edgy bad trip in one feverish level.",
         cover: C + "copertina.png",
         preview: C + "weapon-wheel.mp4",
         meta: {
